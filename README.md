@@ -4,16 +4,23 @@ App iOS para empleo remoto internacional en español e inglés. Busca vacantes m
 
 ## Instalar en iPhone
 
-Escanea el código QR:
+### 1. Descargar ZIP (Mac)
+
+**[⬇️ Descargar Chambea.zip](https://github.com/jomstudiovzla/Chambea/archive/refs/heads/main.zip)**
+
+Descomprime → lee `LEEME-PRIMERO.txt` → abre `Chambea.xcodeproj` → conecta iPhone → Run ▶
+
+### 2. Guías
+
+- [Guía completa de instalación](docs/GUIA-INSTALACION-IPHONE-COMPLETA.md)
+- [Guía móvil (web)](https://jomstudiovzla.github.io/Chambea/install.html)
+- [Instrucciones resumidas](INSTALAR-IPHONE.md)
+
+### 3. Código QR
 
 ![Instalar Chambea en iPhone](docs/Chambea-QR-Instalar-iPhone.png)
 
-O abre la guía directamente:
-
-- [Guía móvil de instalación](docs/install.html)
-- [Instrucciones completas](INSTALAR-IPHONE.md)
-
-> iOS requiere Xcode en Mac para instalar en desarrollo. TestFlight llegará en una versión posterior.
+> iOS requiere Xcode en Mac para instalar. TestFlight llegará en una versión posterior.
 
 ## Repositorio
 

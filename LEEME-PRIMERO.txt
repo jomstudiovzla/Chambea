@@ -1,0 +1,71 @@
+═══════════════════════════════════════════════════════════════
+  CHAMBEA — Instalar en tu iPhone (empieza aquí)
+═══════════════════════════════════════════════════════════════
+
+Chambea es una app iOS. Para instalarla en tu iPhone necesitas
+un Mac con Xcode (no se puede instalar solo desde el iPhone).
+
+───────────────────────────────────────────────────────────────
+REQUISITOS
+───────────────────────────────────────────────────────────────
+  • Mac con macOS Sonoma o posterior
+  • Xcode 15 o superior (App Store → busca "Xcode")
+  • iPhone con iOS 17 o superior
+  • Cable USB (o depuración inalámbrica configurada)
+  • Apple ID (gratuito sirve)
+
+───────────────────────────────────────────────────────────────
+INSTALACIÓN EN 6 PASOS
+───────────────────────────────────────────────────────────────
+
+  1. DESCOMPRIMIR
+     Si descargaste el ZIP, haz doble clic para descomprimir.
+     Debes ver la carpeta con Chambea.xcodeproj dentro.
+
+  2. ABRIR EN XCODE
+     Haz doble clic en:  Chambea.xcodeproj
+
+  3. CONFIGURAR FIRMA
+     En Xcode:
+     - Clic en "Chambea" (proyecto azul, panel izquierdo)
+     - Pestaña "Signing & Capabilities"
+     - Marca "Automatically manage signing"
+     - En "Team" elige tu Apple ID
+       (si no aparece: Xcode → Settings → Accounts → añade tu Apple ID)
+
+  4. CONECTAR TU IPHONE
+     - Conecta el iPhone al Mac con cable
+     - En el iPhone: toca "Confiar en este ordenador"
+     - En Xcode, barra superior: elige tu iPhone (no simulador)
+
+  5. EJECUTAR
+     - Pulsa el botón Play ▶ (o Cmd + R)
+     - La primera vez puede pedir activar "Modo desarrollador" en el iPhone:
+       Ajustes → Privacidad y seguridad → Modo desarrollador → Activar
+
+  6. LISTO
+     Chambea quedará instalada en tu iPhone.
+
+───────────────────────────────────────────────────────────────
+IMPORTANTE
+───────────────────────────────────────────────────────────────
+  • Con Apple ID gratuito la app dura 7 días. Renueva ejecutando
+    de nuevo desde Xcode (paso 5).
+  • La guía completa está en: GUIA-INSTALACION-IPHONE.md
+  • Repositorio: https://github.com/jomstudiovzla/Chambea
+  • Guía web: https://jomstudiovzla.github.io/Chambea/install.html
+
+───────────────────────────────────────────────────────────────
+¿PROBLEMAS?
+───────────────────────────────────────────────────────────────
+  "Signing requires a development team"
+    → Añade tu Apple ID en Xcode → Settings → Accounts
+
+  "Untrusted Developer"
+    → iPhone: Ajustes → General → VPN y gestión de dispositivos
+      → Confía en tu certificado de desarrollador
+
+  No aparece mi iPhone en Xcode
+    → Desbloquea el iPhone, acepta "Confiar", prueba otro cable
+
+═══════════════════════════════════════════════════════════════

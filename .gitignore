@@ -21,6 +21,9 @@ Package.resolved
 .env
 .env.*
 
+# Distribution packages
+dist/
+
 # Archives & export
 *.ipa
 *.dSYM.zip

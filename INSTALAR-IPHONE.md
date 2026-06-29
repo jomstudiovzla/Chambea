@@ -1,47 +1,52 @@
 # Instalar Chambea en tu iPhone
 
-## Código QR
+## Descargar paquete completo (ZIP)
 
-Escanea este código desde tu iPhone para abrir la guía de instalación:
+**Enlace directo para tu Mac:**
 
-![QR Instalar Chambea en iPhone](docs/Chambea-QR-Instalar-iPhone.png)
+👉 **https://github.com/jomstudiovzla/Chambea/archive/refs/heads/main.zip**
 
-También puedes abrir directamente:
+1. Descarga y descomprime el ZIP.
+2. Abre **`LEEME-PRIMERO.txt`** (instrucciones rápidas).
+3. Lee **`GUIA-INSTALACION-IPHONE.md`** si necesitas más detalle.
+4. Abre **`Chambea.xcodeproj`** en Xcode.
+5. Conecta tu iPhone y pulsa **Run** ▶.
 
-- **Guía móvil (recomendada):** https://jomstudiovzla.github.io/Chambea/install.html
-- **En GitHub:** [docs/install.html](docs/install.html)
-
-Para regenerar los QR después de cambiar URLs:
+### Generar ZIP localmente
 
 ```bash
-python3 scripts/generate_qr.py
+./scripts/package-for-iphone.sh
 ```
+
+El archivo quedará en: `dist/Chambea-Instalar-iPhone.zip`
 
 ---
 
-iOS no permite instalar apps con un enlace como Android. Necesitas una de estas opciones:
+## Código QR
 
-## Opción 1 — Desde Xcode (recomendada para probar ahora)
+![QR Instalar Chambea en iPhone](docs/Chambea-QR-Instalar-iPhone.png)
 
-1. Clona el repositorio en tu Mac.
-2. Abre `Chambea.xcodeproj` en Xcode.
-3. Ve a **Signing & Capabilities** y selecciona tu **Team** (Apple ID gratuito o cuenta Developer).
-4. Conecta tu iPhone por cable (o activa depuración inalámbrica).
-5. Elige tu iPhone como destino y pulsa **Run** (▶).
+- **Guía móvil:** https://jomstudiovzla.github.io/Chambea/install.html
+- **Dentro de la app:** Ajustes → Instalar en iPhone
 
-La app quedará instalada en tu dispositivo (7 días con Apple ID gratuito; renueva ejecutando de nuevo desde Xcode).
+---
 
-## Opción 2 — TestFlight (para compartir con más personas)
+## Documentación
 
-1. Cuenta **Apple Developer Program** (99 USD/año).
-2. Archiva la app en Xcode → **Distribute App** → **App Store Connect**.
-3. En App Store Connect, activa **TestFlight** y añade testers.
-4. Comparte el enlace de TestFlight; desde ahí sí puedes usar un código QR.
+| Documento | Contenido |
+|-----------|-----------|
+| `LEEME-PRIMERO.txt` | Inicio rápido (6 pasos) |
+| `docs/GUIA-INSTALACION-IPHONE-COMPLETA.md` | Guía detallada con solución de problemas |
+| `INSTALAR-IPHONE.md` | Este archivo |
 
-## Opción 3 — Exportar IPA (cuando tengas firma configurada)
+---
 
-```bash
-./scripts/export-ipa.sh
-```
+## Requisitos
 
-Sube el `.ipa` a TestFlight, Firebase App Distribution o un servicio OTA con perfil Ad Hoc (UDID del iPhone registrado).
+- Mac con Xcode 15+
+- iPhone con iOS 17+
+- Apple ID (gratuito funciona; la app dura 7 días y se renueva con Run en Xcode)
+
+## TestFlight (futuro)
+
+Para instalar sin Xcode, se necesitará TestFlight (cuenta Developer 99 USD/año).
