@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#2563EB">
+  <title>Instalar Chambea en iPhone</title>
+  <style>
+    :root {
+      --primary: #2563EB;
+      --bg: #F8FAFC;
+      --surface: #FFFFFF;
+      --text: #0F172A;
+      --muted: #64748B;
+      --radius: 16px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      padding: env(safe-area-inset-top) 20px calc(24px + env(safe-area-inset-bottom));
+    }
+    .hero {
+      background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+      color: white;
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      margin: 16px 0 24px;
+      text-align: center;
+      box-shadow: 0 12px 32px rgba(37, 99, 235, 0.25);
+    }
+    .hero h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; }
+    .hero p { margin-top: 8px; opacity: 0.92; font-size: 1rem; }
+    .badge {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.18);
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+    .card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 20px;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06);
+    }
+    .card h2 {
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .step {
+      display: flex;
+      gap: 14px;
+      padding: 12px 0;
+      border-bottom: 1px solid #E2E8F0;
+    }
+    .step:last-child { border-bottom: none; padding-bottom: 0; }
+    .num {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #EFF6FF;
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .step p { color: var(--muted); font-size: 0.95rem; }
+    .step strong { color: var(--text); display: block; margin-bottom: 2px; }
+    .note {
+      background: #FFFBEB;
+      border: 1px solid #FDE68A;
+      border-radius: 12px;
+      padding: 14px 16px;
+      font-size: 0.9rem;
+      color: #92400E;
+      margin-top: 8px;
+    }
+    .cta {
+      display: block;
+      text-align: center;
+      background: var(--primary);
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 16px 20px;
+      border-radius: 14px;
+      margin-top: 8px;
+      box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+    }
+    .footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.8rem;
+      margin-top: 24px;
+      padding-bottom: 8px;
+    }
+    .footer a { color: var(--primary); text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <h1>Chambea</h1>
+    <p>Empleo remoto para hispanohablantes</p>
+    <span class="badge">Instalar en iPhone</span>
+  </div>
+
+  <div class="card">
+    <h2>📱 Instalación con Xcode (Mac)</h2>
+    <div class="step">
+      <span class="num">1</span>
+      <div>
+        <strong>Abre el repositorio en tu Mac</strong>
+        <p>Clona o descarga el proyecto desde GitHub.</p>
+      </div>
+    </div>
+    <div class="step">
+      <span class="num">2</span>
+      <div>
+        <strong>Abre Chambea.xcodeproj</strong>
+        <p>En Xcode, ve a Signing &amp; Capabilities y elige tu Apple ID.</p>
+      </div>
+    </div>
+    <div class="step">
+      <span class="num">3</span>
+      <div>
+        <strong>Conecta tu iPhone</strong>
+        <p>Por cable o depuración inalámbrica. Selecciona tu iPhone y pulsa Run ▶.</p>
+      </div>
+    </div>
+    <div class="note">
+      Con Apple ID gratuito la app dura 7 días en el dispositivo. Vuelve a ejecutar desde Xcode para renovarla.
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🚀 Próximamente: TestFlight</h2>
+    <p style="color: var(--muted); font-size: 0.95rem;">
+      Cuando publiquemos en TestFlight, este mismo QR abrirá la instalación directa sin Xcode.
+    </p>
+    <a class="cta" href="https://github.com/jomstudiovzla/Chambea">Ver repositorio en GitHub</a>
+  </div>
+
+  <p class="footer">
+    <a href="https://github.com/jomstudiovzla/Chambea/blob/main/INSTALAR-IPHONE.md">Guía completa</a>
+    · Chambea © 2026
+  </p>
+</body>
+</html>

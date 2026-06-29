@@ -1,5 +1,21 @@
 # Instalar Chambea en tu iPhone
 
+## Código QR
+
+Escanea este código desde tu iPhone para abrir la guía de instalación:
+
+![QR Instalar Chambea en iPhone](docs/Chambea-QR-Instalar-iPhone.png)
+
+También puedes abrir directamente: [docs/install.html](docs/install.html)
+
+Para regenerar los QR después de cambiar URLs:
+
+```bash
+python3 scripts/generate_qr.py
+```
+
+---
+
 iOS no permite instalar apps con un enlace como Android. Necesitas una de estas opciones:
 
 ## Opción 1 — Desde Xcode (recomendada para probar ahora)
