@@ -29,7 +29,9 @@ cp "$ROOT/LEEME-PRIMERO.txt" "$STAGING/LEEME-PRIMERO.txt"
 cp "$ROOT/docs/GUIA-INSTALACION-IPHONE-COMPLETA.md" "$STAGING/GUIA-INSTALACION-IPHONE.md"
 
 cd "$DIST"
-ditto -c -k --sequesterRsrc --keepParent "$(basename "$STAGING")" "$ZIP_NAME"
+rm -rf "$STAGING/__MACOSX"
+find "$STAGING" -name '.DS_Store' -delete
+zip -r -q -X "$ZIP_NAME" "$(basename "$STAGING")"
 
 BYTES=$(stat -f%z "$ZIP_PATH" 2>/dev/null || stat -c%s "$ZIP_PATH")
 MB=$(echo "scale=1; $BYTES / 1048576" | bc)
