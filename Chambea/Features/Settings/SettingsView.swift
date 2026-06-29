@@ -44,8 +44,18 @@ struct SettingsView: View {
                     NavigationLink(String(localized: "settings.privacy.policy")) { PrivacyPolicyView() }
                     NavigationLink(String(localized: "settings.privacy.data")) { DataManagementView() }
                 }
+                Section(String(localized: "settings.install.section")) {
+                    NavigationLink {
+                        InstallAppView()
+                    } label: {
+                        Label(String(localized: "settings.install.title"), systemImage: "qrcode")
+                    }
+                }
                 Section(String(localized: "settings.about")) {
                     LabeledContent(String(localized: "settings.version"), value: "1.0.0")
+                    Link(destination: URL(string: QRCodeGenerator.repositoryURL)!) {
+                        Label(String(localized: "settings.install.repository"), systemImage: "link")
+                    }
                 }
             }
             .navigationTitle(String(localized: "settings.title"))
