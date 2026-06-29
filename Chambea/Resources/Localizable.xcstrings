@@ -2110,6 +2110,390 @@
         }
       }
     },
+    "profile.hub.sections" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Profile sections" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Secciones del perfil" } }
+      }
+    },
+    "profile.section.basic" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Basic info" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Datos básicos" } }
+      }
+    },
+    "profile.section.about" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "About" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Resumen" } }
+      }
+    },
+    "profile.section.experience" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Experience" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Experiencia" } }
+      }
+    },
+    "profile.section.education" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Education" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Educación" } }
+      }
+    },
+    "profile.section.skills" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Skills" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Habilidades" } }
+      }
+    },
+    "profile.section.social" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Social & contact" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Redes y contacto" } }
+      }
+    },
+    "profile.section.video" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Presentation video" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Video de presentación" } }
+      }
+    },
+    "profile.section.empty" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Empty" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Vacío" } }
+      }
+    },
+    "profile.section.partial" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "In progress" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "En progreso" } }
+      }
+    },
+    "profile.section.complete" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Complete" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Completo" } }
+      }
+    },
+    "profile.headline.es" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Headline (Spanish)" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Titular (español)" } }
+      }
+    },
+    "profile.headline.en" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Headline (English)" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Titular (inglés)" } }
+      }
+    },
+    "profile.timezone" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Time zone" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Huso horario" } }
+      }
+    },
+    "profile.availability.title" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Availability" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Disponibilidad" } }
+      }
+    },
+    "profile.availability.remote" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Remote" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Remoto" } }
+      }
+    },
+    "profile.availability.hybrid" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Hybrid" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Híbrido" } }
+      }
+    },
+    "profile.availability.onsite" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "On-site" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Presencial" } }
+      }
+    },
+    "profile.about.short" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Short summary" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Resumen corto" } }
+      }
+    },
+    "profile.about.short.es" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Short summary (ES)" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Resumen corto (ES)" } }
+      }
+    },
+    "profile.about.short.en" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Short summary (EN)" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Resumen corto (EN)" } }
+      }
+    },
+    "profile.about.long" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Long summary" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Resumen largo" } }
+      }
+    },
+    "profile.experience.title" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Role" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Cargo" } }
+      }
+    },
+    "profile.experience.company" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Company" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Empresa" } }
+      }
+    },
+    "profile.experience.current" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Current role" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Cargo actual" } }
+      }
+    },
+    "profile.experience.remote" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Remote/international" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Remoto/internacional" } }
+      }
+    },
+    "profile.experience.start" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Start date" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Fecha inicio" } }
+      }
+    },
+    "profile.experience.end" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "End date" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Fecha fin" } }
+      }
+    },
+    "profile.experience.sectors" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Sectors (comma separated)" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Sectores (separados por coma)" } }
+      }
+    },
+    "profile.experience.add" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Add experience" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Añadir experiencia" } }
+      }
+    },
+    "profile.education.title" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Education" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Estudios" } }
+      }
+    },
+    "profile.education.institution" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Institution" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Institución" } }
+      }
+    },
+    "profile.education.degree" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Degree" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Título" } }
+      }
+    },
+    "profile.education.country" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Country" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "País" } }
+      }
+    },
+    "profile.education.add" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Add education" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Añadir estudio" } }
+      }
+    },
+    "profile.certifications.title" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Certifications" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Certificaciones" } }
+      }
+    },
+    "profile.certifications.name" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Name" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Nombre" } }
+      }
+    },
+    "profile.certifications.issuer" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Issuer" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Emisor" } }
+      }
+    },
+    "profile.certifications.url" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Verification URL" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "URL de verificación" } }
+      }
+    },
+    "profile.certifications.add" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Add certification" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Añadir certificación" } }
+      }
+    },
+    "profile.languages.title" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Languages" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Idiomas" } }
+      }
+    },
+    "profile.languages.code" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Code" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Código" } }
+      }
+    },
+    "profile.languages.level" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Level" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Nivel" } }
+      }
+    },
+    "profile.languages.add" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Add language" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Añadir idioma" } }
+      }
+    },
+    "profile.social.title" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Social links" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Redes sociales" } }
+      }
+    },
+    "profile.social.add" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Add link" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Añadir enlace" } }
+      }
+    },
+    "profile.social.add.custom" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Custom link" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Enlace personalizado" } }
+      }
+    },
+    "profile.social.preview" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Recruiter preview" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Vista reclutador" } }
+      }
+    },
+    "profile.social.preview.empty" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "No public links yet" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Sin enlaces públicos aún" } }
+      }
+    },
+    "profile.visibility.title" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Visibility" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Visibilidad" } }
+      }
+    },
+    "profile.visibility.public" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Public" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Público" } }
+      }
+    },
+    "profile.visibility.applyOnly" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Only when applying" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Solo al aplicar" } }
+      }
+    },
+    "profile.visibility.private" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Private" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Privado" } }
+      }
+    },
+    "profile.video.language.title" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Video language" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Idioma del video" } }
+      }
+    },
+    "profile.video.language.spanish" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Spanish" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Español" } }
+      }
+    },
+    "profile.video.language.english" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "English" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Inglés" } }
+      }
+    },
+    "profile.video.language.bilingual" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Bilingual" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Bilingüe" } }
+      }
+    },
+    "profile.video.upload" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Upload video" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Subir video" } }
+      }
+    },
+    "profile.video.pick" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Choose from gallery" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Elegir de la galería" } }
+      }
+    },
+    "profile.video.importing" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Importing video…" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Importando video…" } }
+      }
+    },
+    "profile.video.preview" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Preview" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Vista previa" } }
+      }
+    },
+    "profile.video.remove" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Remove video" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Eliminar video" } }
+      }
+    },
+    "profile.video.error" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Could not import video" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "No se pudo importar el video" } }
+      }
+    },
+    "profile.video.tooLarge" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Video exceeds 100 MB limit" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "El video supera el límite de 100 MB" } }
+      }
+    },
     "profile.location" : {
       "localizations" : {
         "en" : {

@@ -31,6 +31,8 @@ targets:
           - UIInterfaceOrientationPortrait
         NSPhotoLibraryUsageDescription: "Chambea necesita acceso a tus fotos para importar imágenes de portafolio y CV."
         NSPhotoLibraryAddUsageDescription: "Chambea guarda documentos exportados en tu biblioteca cuando lo autorices."
+        NSCameraUsageDescription: "Chambea usa la cámara para grabar tu video de presentación profesional."
+        NSMicrophoneUsageDescription: "Chambea usa el micrófono para grabar audio en tu video de presentación."
         NSUserNotificationsUsageDescription: "Chambea envía alertas de empleo remoto según tus filtros guardados."
         ITSAppUsesNonExemptEncryption: false
     settings:
@@ -51,6 +53,7 @@ targets:
       - target: Chambea
     settings:
       PRODUCT_BUNDLE_IDENTIFIER: com.chambea.app.tests
+      GENERATE_INFOPLIST_FILE: YES
   ChambeaUITests:
     type: bundle.ui-testing
     platform: iOS
@@ -60,6 +63,7 @@ targets:
       - target: Chambea
     settings:
       PRODUCT_BUNDLE_IDENTIFIER: com.chambea.app.uitests
+      GENERATE_INFOPLIST_FILE: YES
 schemes:
   Chambea:
     build:

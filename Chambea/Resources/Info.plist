@@ -24,6 +24,10 @@
 	<string>Chambea guarda documentos exportados en tu biblioteca cuando lo autorices.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Chambea necesita acceso a tus fotos para importar imágenes de portafolio y CV.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Chambea usa la cámara para grabar tu video de presentación profesional.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Chambea usa el micrófono para grabar audio en tu video de presentación.</string>
 	<key>NSUserNotificationsUsageDescription</key>
 	<string>Chambea envía alertas de empleo remoto según tus filtros guardados.</string>
 	<key>UILaunchScreen</key>

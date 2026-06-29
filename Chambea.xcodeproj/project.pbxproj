@@ -60,6 +60,14 @@
 		930CDFA2891CFA662C55EB38 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF521CBF1A193E58656D7D9 /* MainTabView.swift */; };
 		9F033D066946256E3B965704 /* ProfileRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BF666C8145EE6C570679FF /* ProfileRepositoryProtocol.swift */; };
 		A78ECC799287A44CF1063C93 /* JobFilterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8F0D5AE5EF8A660871C4FE /* JobFilterTests.swift */; };
+		F1A2B3C4D5E6789012345620 /* ProfileSectionModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A2B3C4D5E6789012345621 /* ProfileSectionModels.swift */; };
+		F1A2B3C4D5E6789012345622 /* AboutEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A2B3C4D5E6789012345623 /* AboutEditorView.swift */; };
+		F1A2B3C4D5E6789012345624 /* ExperienceEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A2B3C4D5E6789012345625 /* ExperienceEditorView.swift */; };
+		F1A2B3C4D5E6789012345626 /* EducationEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A2B3C4D5E6789012345627 /* EducationEditorView.swift */; };
+		F1A2B3C4D5E6789012345628 /* SkillsEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A2B3C4D5E6789012345629 /* SkillsEditorView.swift */; };
+		F1A2B3C4D5E678901234562A /* SocialContactEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A2B3C4D5E678901234562B /* SocialContactEditorView.swift */; };
+		F1A2B3C4D5E678901234562C /* PresentationVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A2B3C4D5E678901234562D /* PresentationVideoView.swift */; };
+		F1A2B3C4D5E678901234562E /* UserProfileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A2B3C4D5E678901234562F /* UserProfileTests.swift */; };
 		A97EFC55B792D70F12BD9631 /* AICoverLetterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEFA66B1AB7A77EE6DFCF47 /* AICoverLetterView.swift */; };
 		ABE07D2AF78B1788768F4BFF /* ProfileHubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7558574B98C67237B7C24245 /* ProfileHubView.swift */; };
 		F1A2B3C4D5E6789012345601 /* JobLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A2B3C4D5E6789012345602 /* JobLanguage.swift */; };
@@ -206,6 +214,14 @@
 		F1A2B3C4D5E678901234560C /* JobicyJobSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobicyJobSource.swift; sourceTree = "<group>"; };
 		F1A2B3C4D5E678901234560E /* DeepLinkJobSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkJobSource.swift; sourceTree = "<group>"; };
 		F1A2B3C4D5E6789012345610 /* PortfolioEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioEditorView.swift; sourceTree = "<group>"; };
+		F1A2B3C4D5E6789012345621 /* ProfileSectionModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSectionModels.swift; sourceTree = "<group>"; };
+		F1A2B3C4D5E6789012345623 /* AboutEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutEditorView.swift; sourceTree = "<group>"; };
+		F1A2B3C4D5E6789012345625 /* ExperienceEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceEditorView.swift; sourceTree = "<group>"; };
+		F1A2B3C4D5E6789012345627 /* EducationEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducationEditorView.swift; sourceTree = "<group>"; };
+		F1A2B3C4D5E6789012345629 /* SkillsEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsEditorView.swift; sourceTree = "<group>"; };
+		F1A2B3C4D5E678901234562B /* SocialContactEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialContactEditorView.swift; sourceTree = "<group>"; };
+		F1A2B3C4D5E678901234562D /* PresentationVideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationVideoView.swift; sourceTree = "<group>"; };
+		F1A2B3C4D5E678901234562F /* UserProfileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -364,6 +380,7 @@
 				F1A2B3C4D5E6789012345602 /* JobLanguage.swift */,
 				A74D23B9CDA894C5B1F98780 /* Message.swift */,
 				F1A2B3C4D5E6789012345604 /* PortfolioLink.swift */,
+				F1A2B3C4D5E6789012345621 /* ProfileSectionModels.swift */,
 				17A1E932EA81F9F4F62D2650 /* SavedJob.swift */,
 				384F4C3994704044CAD220EA /* UserProfile.swift */,
 			);
@@ -421,6 +438,7 @@
 			children = (
 				8B8F0D5AE5EF8A660871C4FE /* JobFilterTests.swift */,
 				6D120A3DB60445D3D6943D42 /* JobMapperTests.swift */,
+				F1A2B3C4D5E678901234562F /* UserProfileTests.swift */,
 			);
 			path = ChambeaTests;
 			sourceTree = "<group>";
@@ -462,9 +480,15 @@
 		A9EC48C70ECE3265681B545A /* ProfileHub */ = {
 			isa = PBXGroup;
 			children = (
-				C22E67CA46AA93B2229EB0EF /* ProfileEditorView.swift */,
+				F1A2B3C4D5E6789012345623 /* AboutEditorView.swift */,
+				F1A2B3C4D5E6789012345627 /* EducationEditorView.swift */,
+				F1A2B3C4D5E6789012345625 /* ExperienceEditorView.swift */,
 				F1A2B3C4D5E6789012345610 /* PortfolioEditorView.swift */,
+				F1A2B3C4D5E678901234562D /* PresentationVideoView.swift */,
+				C22E67CA46AA93B2229EB0EF /* ProfileEditorView.swift */,
 				7558574B98C67237B7C24245 /* ProfileHubView.swift */,
+				F1A2B3C4D5E6789012345629 /* SkillsEditorView.swift */,
+				F1A2B3C4D5E678901234562B /* SocialContactEditorView.swift */,
 			);
 			path = ProfileHub;
 			sourceTree = "<group>";
@@ -706,6 +730,7 @@
 			files = (
 				A78ECC799287A44CF1063C93 /* JobFilterTests.swift in Sources */,
 				FE015E22470039BD07D761D8 /* JobMapperTests.swift in Sources */,
+				F1A2B3C4D5E678901234562E /* UserProfileTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -713,6 +738,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1A2B3C4D5E6789012345622 /* AboutEditorView.swift in Sources */,
 				E052F902891F884465D6818F /* AIAnswerHelperView.swift in Sources */,
 				702AF90C19C7CBB89782546A /* AIAssistantUseCase.swift in Sources */,
 				A97EFC55B792D70F12BD9631 /* AICoverLetterView.swift in Sources */,
@@ -726,6 +752,7 @@
 				C0CF82CA7C637883DF02B5A6 /* AlertRepository.swift in Sources */,
 				6064C5B52D92970478CFE5F2 /* AlertRepositoryProtocol.swift in Sources */,
 				563EE868729C6952B2202FC6 /* AlertsView.swift in Sources */,
+				F1A2B3C4D5E6789012345626 /* EducationEditorView.swift in Sources */,
 				6DAC4D6ACAFAF86D69445F84 /* AppCoordinator.swift in Sources */,
 				CE02F2E36A8C7A8FEE9823AC /* ArbeitnowJobSource.swift in Sources */,
 				D37C1C5712C5D36BC6C12173 /* ChambeaApp.swift in Sources */,
@@ -745,6 +772,7 @@
 				7FD7C97CAB4719B06E6E88BC /* EmptyStateView.swift in Sources */,
 				EB1F892DF10F7B1ADB6466FB /* Endpoint.swift in Sources */,
 				523E476616F9B0D0E272673E /* FileProtectionService.swift in Sources */,
+				F1A2B3C4D5E6789012345624 /* ExperienceEditorView.swift in Sources */,
 				2BDB27425FAEF958AED36DB0 /* FilterSheetView.swift in Sources */,
 				805D4251973256449FFF35B5 /* Job.swift in Sources */,
 				B91BCB70195E3FB50ADA4B5B /* JobAlert.swift in Sources */,
@@ -776,7 +804,9 @@
 				2BFF3E9113C658A28A1EA601 /* ProfileAvatarView.swift in Sources */,
 				179A1B5C983BF483BFA46F13 /* ProfileEditorView.swift in Sources */,
 				F1A2B3C4D5E678901234560F /* PortfolioEditorView.swift in Sources */,
+				F1A2B3C4D5E678901234562C /* PresentationVideoView.swift in Sources */,
 				F1A2B3C4D5E6789012345603 /* PortfolioLink.swift in Sources */,
+				F1A2B3C4D5E6789012345620 /* ProfileSectionModels.swift in Sources */,
 				ABE07D2AF78B1788768F4BFF /* ProfileHubView.swift in Sources */,
 				64E02A7F60211D12BC9E50C1 /* ProfileRepository.swift in Sources */,
 				9F033D066946256E3B965704 /* ProfileRepositoryProtocol.swift in Sources */,
@@ -790,6 +820,8 @@
 				3D78B7A4F1518D74B4FD1E06 /* SearchJobsUseCase.swift in Sources */,
 				4AF50BFF7BAB7A24E42B6579 /* SearchView.swift in Sources */,
 				7BF5AD8A6BC6E11B0058BCD8 /* SearchViewModel.swift in Sources */,
+				F1A2B3C4D5E6789012345628 /* SkillsEditorView.swift in Sources */,
+				F1A2B3C4D5E678901234562A /* SocialContactEditorView.swift in Sources */,
 				2F0F79FC68BF59094F2EAC05 /* SettingsView.swift in Sources */,
 				020F498345365A33B36C04BF /* SkeletonView.swift in Sources */,
 				B571A9C1E54F3BB7BBDCB236 /* String+HTML.swift in Sources */,
@@ -885,6 +917,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -966,6 +999,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -982,6 +1016,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1018,6 +1053,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

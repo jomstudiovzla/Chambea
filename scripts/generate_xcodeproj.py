@@ -319,6 +319,7 @@ app_settings = [
 test_settings = [
     'BUNDLE_LOADER = "$(TEST_HOST)";',
     "CODE_SIGN_STYLE = Automatic;",
+    "GENERATE_INFOPLIST_FILE = YES;",
     "IPHONEOS_DEPLOYMENT_TARGET = 17.0;",
     f"PRODUCT_BUNDLE_IDENTIFIER = {BUNDLE_ID}.tests;",
     'PRODUCT_NAME = "$(TARGET_NAME)";',
