@@ -6,7 +6,10 @@ Escanea este código desde tu iPhone para abrir la guía de instalación:
 
 ![QR Instalar Chambea en iPhone](docs/Chambea-QR-Instalar-iPhone.png)
 
-También puedes abrir directamente: [docs/install.html](docs/install.html)
+También puedes abrir directamente:
+
+- **Guía móvil (recomendada):** https://jomstudiovzla.github.io/Chambea/install.html
+- **En GitHub:** [docs/install.html](docs/install.html)
 
 Para regenerar los QR después de cambiar URLs:
 
