@@ -12,9 +12,10 @@ DOCS = ROOT / "docs"
 GITHUB_USER = "jomstudiovzla"
 REPO = "Chambea"
 
+PAGES_BASE = f"https://{GITHUB_USER}.github.io/{REPO}"
 URLS = {
     "github": f"https://github.com/{GITHUB_USER}/{REPO}",
-    "install": f"https://github.com/{GITHUB_USER}/{REPO}/blob/main/docs/install.html",
+    "install": f"{PAGES_BASE}/install.html",
 }
 
 POSTERS = {
