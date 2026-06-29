@@ -1,0 +1,684 @@
+1) Resumen ejecutivo
+
+Chambea es una aplicación iPhone profesional para que profesionales hispanohablantes — especialmente en Venezuela, LATAM, España y Europa — encuentren empleo remoto internacional en español e inglés, gestionen un perfil multimedia comparable a LinkedIn/Computrabajo, y usen IA para entrevistas, CV adaptado y análisis de vacantes.
+
+La app combina: (1) buscador multi-fuente legal en tiempo real, (2) módulo dedicado "Perfil y Portafolio" con CV, redes, video pitch y archivos versionados, (3) IA bilingüe para empleabilidad, (4) cumplimiento estricto App Store sin scraping.
+
+Estado base existente en workspace: 71 archivos Swift, arquitectura MVVM-C, agregador Remotive/Arbeitnow/RemoteOK, SwiftData, Keychain, Document/Photo Picker, preview PDF/video, IA scaffold. Esta especificación define la evolución completa hacia producto production-ready hispanohablante.
+
+
+2) Objetivo del producto
+
+**Problema:** Profesionales en mercados como Venezuela enfrentan barreras de idioma, visibilidad internacional, CV no optimizado para ATS, y dispersión de vacantes remotas en español.
+
+**Solución:** Una app iOS unificada que acelere el ciclo: buscar → filtrar (español/LATAM/UE) → guardar → optimizar perfil/CV con IA → aplicar con portafolio multimedia completo.
+
+**Usuarios objetivo:** Roles técnicos, creativos, administrativos, marketing, diseño, soporte, ventas, SEO, desarrollo, contenido, asistentes virtuales.
+
+**Métricas de éxito:** tiempo hasta primera aplicación, tasa de guardado de vacantes, completitud de perfil multimedia, score ATS promedio, alertas activas por usuario.
+
+
+3) Alcance funcional
+
+### 3.1 Buscador de empleo (español e inglés)
+- Búsqueda en tiempo real con caché offline (SwiftData).
+- Idiomas de anuncio: español, inglés, bilingüe.
+- Mercados: Venezuela, LATAM, España, UE, global remoto.
+- Guardado, seguimiento de estado (guardado/aplicado/entrevista/oferta/rechazado).
+- Alertas push con filtros guardados.
+- Apertura segura de ofertas (SFSafariViewController).
+
+### 3.2 Perfil profesional multimedia (módulo dedicado)
+Ver sección 7 completa (sub-items a–i).
+
+### 3.3 Menú "Perfil y CV"
+Ver sección 7 — navegación y flujos de edición.
+
+### 3.4 IA para entrevistas y contenido
+Ver sección 9.
+
+### 3.5 Archivos y portafolio
+Ver sección 10.
+
+### 3.6 Configuración, privacidad y fuentes
+- Idioma app: es/en/pt.
+- Activar/desactivar fuentes por portal.
+- Política de privacidad, exportar/eliminar datos.
+- Modo claro/oscuro.
+
+### Fuera de alcance MVP
+- Pagos, mensajería in-app con reclutadores (solo email/deep link), matching ML avanzado.
+
+
+4) Arquitectura técnica
+
+**Patrón:** MVVM-C (Model-View-ViewModel-Coordinator)
+
+```
+┌─────────────────────────────────────────────────────────┐
+│  SwiftUI Views (Features/)                              │
+│  Search, ProfileHub, Documents, AI, Settings            │
+└────────────────────┬────────────────────────────────────┘
+                     │ @StateObject / @EnvironmentObject
+┌────────────────────▼────────────────────────────────────┐
+│  ViewModels (@MainActor, ObservableObject)              │
+└────────────────────┬────────────────────────────────────┘
+                     │
+┌────────────────────▼────────────────────────────────────┐
+│  UseCases (Domain/UseCases/)                            │
+│  SearchJobs, ManageProfile, ManageDocuments, AIAssistant │
+└────────────────────┬────────────────────────────────────┘
+                     │
+┌────────────────────▼────────────────────────────────────┐
+│  Repository Protocols (Domain/Repositories/)            │
+└────────────────────┬────────────────────────────────────┘
+                     │
+┌────────────────────▼────────────────────────────────────┐
+│  Services (Data/Services/)                              │
+│  JobRepository, ProfileRepository, DocumentRepository   │
+│  AIService, NotificationService, SyncService            │
+│  JobSourceAggregator + JobSources (APIs/RSS legales)    │
+└────────────────────┬────────────────────────────────────┘
+                     │
+┌────────────────────▼────────────────────────────────────┐
+│  Infraestructura (Core/)                                │
+│  APIClient (URLSession, async/await, RetryPolicy)       │
+│  SwiftData (PersistedJob, PersistedProfile, Documents)  │
+│  KeychainService, FileProtectionService                 │
+└─────────────────────────────────────────────────────────┘
+```
+
+**Tecnologías obligatorias:**
+| Capa | Tecnología |
+|------|------------|
+| UI | SwiftUI, NavigationStack, TabView |
+| Concurrencia | async/await, TaskGroup (fuentes paralelas) |
+| Red | URLSession + capa APIClient propia |
+| Persistencia | SwiftData (caché jobs, perfil, documentos, sync queue) |
+| Credenciales | Keychain (API keys, tokens) |
+| Archivos | UIDocumentPicker, PhotosPicker, AVFoundation (video) |
+| Preview | PDFKit, AVKit, UIImage |
+| Notificaciones | UserNotifications |
+| i18n | Localizable.xcstrings (es, en, pt) |
+| Navegación externa | SFSafariViewController (sin WebView con tracking) |
+| Tests | XCTest unit + XCUITest UI |
+
+**DI:** DIContainer singleton como composition root.
+
+**IA producción:** Proxy backend propio (no API key en cliente). AIService consume endpoint autenticado.
+
+**Offline:** SyncService + NWPathMonitor; cola SyncQueueItem para operaciones pendientes.
+
+
+5) Estructura de carpetas
+
+```
+Chambea/
+├── App/
+│   ├── ChambeaApp.swift
+│   ├── AppCoordinator.swift          # tabs, onboarding, deep links
+│   └── DIContainer.swift
+├── Core/
+│   ├── Networking/                   # APIClient, Endpoint, RetryPolicy
+│   ├── Persistence/                  # SwiftDataModels
+│   ├── Security/                     # Keychain, FileProtection
+│   ├── Extensions/
+│   └── Utilities/
+├── Domain/
+│   ├── Models/
+│   │   ├── Job.swift, JobFilter.swift
+│   │   ├── ProfessionalProfile.swift # modelo expandido multimedia
+│   │   ├── Experience.swift, Education.swift, Certification.swift
+│   │   ├── PortfolioLink.swift, SocialLink.swift, ContactInfo.swift
+│   │   ├── PresentationVideo.swift, CVVersion.swift
+│   │   ├── Document.swift, AIModels.swift
+│   │   └── JobAlert.swift, SavedJob.swift
+│   ├── Repositories/                 # protocolos
+│   └── UseCases/
+├── Data/
+│   ├── DTOs/                         # por fuente de empleo
+│   ├── Mappers/
+│   └── Services/
+│       ├── JobSources/
+│       │   ├── RemotiveJobSource.swift
+│       │   ├── ArbeitnowJobSource.swift
+│       │   ├── RemoteOKJobSource.swift
+│       │   ├── RSSJobSource.swift          # Working Nomads, etc.
+│       │   ├── AdzunaJobSource.swift       # partnership/API
+│       │   └── DeepLinkJobSource.swift     # LinkedIn/Computrabajo URLs
+│       ├── JobRepository.swift
+│       ├── ProfileRepository.swift
+│       ├── DocumentRepository.swift
+│       ├── VideoRepository.swift
+│       ├── CVExportService.swift
+│       ├── AIService.swift
+│       ├── NotificationService.swift
+│       └── SyncService.swift
+├── DesignSystem/
+│   ├── Theme/ChambeaTheme.swift
+│   └── Components/                   # JobCard, Badge, Chip, Skeleton...
+├── Features/
+│   ├── Search/                       # SearchView, FilterSheet
+│   ├── Jobs/                         # JobDetailView
+│   ├── Saved/
+│   ├── ProfileHub/                   # NUEVO: menú Perfil y CV
+│   │   ├── ProfileHubView.swift      # hub principal
+│   │   ├── BasicInfoEditorView.swift
+│   │   ├── AboutEditorView.swift
+│   │   ├── ExperienceEditorView.swift
+│   │   ├── EducationEditorView.swift
+│   │   ├── SkillsEditorView.swift
+│   │   ├── PortfolioEditorView.swift
+│   │   ├── SocialContactEditorView.swift
+│   │   ├── PresentationVideoView.swift
+│   │   └── CVVersionsView.swift
+│   ├── Documents/
+│   ├── AI/
+│   ├── Alerts/
+│   ├── Messaging/
+│   └── Settings/
+├── Navigation/MainTabView.swift
+└── Resources/
+    ├── Assets.xcassets
+    ├── Localizable.xcstrings
+    └── Info.plist
+ChambeaTests/
+ChambeaUITests/
+project.yml                           # XcodeGen
+```
+
+**Evolución de tabs propuesta:**
+| Tab | Icono | Contenido |
+|-----|-------|-----------|
+| Buscar | magnifyingglass | Search + filtros |
+| Guardados | bookmark | SavedJobs + pipeline |
+| Perfil y CV | person.crop.circle | ProfileHub (nuevo hub central) |
+| IA | sparkles | AIHub |
+| Ajustes | gearshape | Settings + fuentes + privacidad |
+
+
+6) Diseño de UI/UX
+
+**Principios:** premium, minimalista, rápida, orientada a conversión, bilingüe por defecto (español primario).
+
+**Sistema visual:**
+- Cards con sombra sutil para vacantes (`JobCardView`)
+- Chips seleccionables para filtros (`ChambeaChip`)
+- Badges de estado: remoto, salario, seniority, idioma ES/EN
+- Skeleton loading en listas
+- Empty states con CTA claro y copy en español
+- Animaciones sutiles en transiciones de chip/tab
+
+**Jerarquía por pantalla:**
+1. **Onboarding (3 páginas):** valor remoto internacional → perfil multimedia → permisos (notificaciones)
+2. **Buscar:** barra búsqueda + chips rápidos (Remoto, Español, LATAM) + lista cards
+3. **Detalle vacante:** header empresa, badges, descripción, CTA Aplicar (Safari) + Guardar + Analizar con IA
+4. **Perfil y CV Hub:** grid de secciones con % completitud (estilo LinkedIn core/recommended/additional sections)
+5. **IA Hub:** lista de capacidades con iconos
+
+**Accesibilidad:** VoiceOver labels, contraste WCAG AA, Dynamic Type, identifiers para UI tests.
+
+**Modo claro/oscuro:** Asset Catalog (`PrimaryColor`, `SurfaceColor`, `BackgroundColor`).
+
+**Referencias UX incorporadas:**
+- LinkedIn profile sections (core/recommended/additional) → estructura del ProfileHub
+- Computrabajo CV builder → flujo importar CV PDF → parsear secciones
+- Filtros LinkedIn jobs (remoto, experiencia, fecha) → FilterSheet expandido
+
+
+7) Módulo de perfil multimedia (incluye menú para editar perfil, CV, redes, video)
+
+### Navegación: Menú "Perfil y CV"
+
+**Hub principal (`ProfileHubView`):**
+- Barra de progreso de completitud (0–100%)
+- Tarjetas de sección con icono, título, estado (vacío/parcial/completo)
+- Acciones globales: Importar CV PDF | Exportar CV PDF | Vista previa reclutador
+
+**Submenús:**
+
+| Submenú | Vista | Función |
+|---------|-------|---------|
+| Editar perfil | BasicInfoEditor + AboutEditor | Datos básicos + resumen |
+| Editar CV | CVVersionsView + Experience + Education + Skills | CV estructurado versionado |
+| Portafolio | PortfolioEditorView | Enlaces + adjuntos |
+| Redes y contacto | SocialContactEditorView | Redes + visibilidad |
+| Video de presentación | PresentationVideoView | Grabar/subir/trim |
+| Archivos | CVVersionsView + DocumentsView | PDFs, referencias, historial |
+
+### a) Datos básicos (`BasicInfoEditorView`)
+- Nombre completo
+- Foto de perfil (PhotosPicker / cámara)
+- Titular profesional ES (`headlineES`) e EN (`headlineEN`)
+- Ubicación: ciudad, país, huso horario (picker IANA, default America/Caracas)
+- Disponibilidad: remoto / híbrido / presencial (multi-select)
+
+**Modelo:**
+```swift
+struct BasicInfo: Codable {
+    var fullName: String
+    var profilePhotoURL: URL?
+    var headlineES: String
+    var headlineEN: String
+    var city: String
+    var country: String
+    var timeZoneIdentifier: String
+    var availability: Set<WorkAvailability> // remote, hybrid, onsite
+}
+```
+
+### b) Resumen/About (`AboutEditorView`)
+- Resumen corto ES (≤300 chars) y EN
+- Resumen largo ES y EN (rich text plain)
+- Inspirado en sección "About" LinkedIn y resumen Computrabajo
+
+### c) Experiencia (`ExperienceEditorView`)
+- Lista editable de `ExperienceEntry`:
+  - cargo, empresa, fecha inicio/fin, remoto/internacional (bool)
+  - descripción funciones, logros cuantificados
+  - etiquetas sector: web, SEO, AI, diseño, soporte, ventas, etc.
+- Reordenar con drag-and-drop
+- Toggle "experiencia remota/internacional" por entrada
+
+### d) Educación y certificaciones (`EducationEditorView`)
+- `EducationEntry`: institución, título, fechas, país
+- `CertificationEntry`: nombre, emisor, fecha, URL verificación, caducidad
+
+### e) Skills (`SkillsEditorView`)
+- Skills técnicas (tags)
+- Skills blandas (tags)
+- Idiomas con nivel CEFR: español, inglés, portugués, otros
+  ```swift
+  struct LanguageSkill: Codable {
+      var language: String // "es", "en", "pt"
+      var level: LanguageLevel // A1–C2, native
+  }
+  ```
+
+### f) Portafolio (`PortfolioEditorView`)
+- Enlaces categorizados:
+  - Web personal / landing (ej. JOM STUDIO)
+  - GitHub / GitLab
+  - YouTube / Vimeo / TikTok / Instagram (contenido audiovisual)
+- Adjuntos: PDF portafolio, presentaciones, reels (DocumentPicker)
+- Vista previa de cada enlace (icono + dominio + validación URL)
+
+### g) Redes sociales y contacto (`SocialContactEditorView`)
+- Campos: LinkedIn, X/Twitter, Instagram, TikTok, sitio web, email, WhatsApp, otros
+- `ContactVisibility` por campo: público / solo al aplicar / privado
+- Vista "Lo que verá el reclutador" (preview filtrada)
+
+### h) Video de presentación (`PresentationVideoView`)
+- **Formatos soportados:** MP4 (H.264), MOV; máx 90 segundos; máx 100 MB
+- **Origen:** grabar con cámara (AVCaptureSession) o subir desde galería (PhotosPicker)
+- **Preview:** AVPlayer inline
+- **Edición básica:** trim inicio/fin con sliders (AVMutableComposition)
+- **Etiquetas idioma:** `videoLanguage: .spanish | .english | .bilingual`
+- Almacenamiento: Application Support con FileProtection
+- Permisos: NSCameraUsageDescription, NSMicrophoneUsageDescription, NSPhotoLibraryUsageDescription
+
+### i) Archivos adjuntos (`CVVersionsView` + Documents)
+- Subir: CV PDF, carta presentación, referencias
+- Historial versionado: `CVVersion { id, name, createdAt, localURL, isActive, source: imported|generated|aiAdapted }`
+- Descargar/exportar: ShareLink + PDF generado por app
+- Importar CV existente → parser IA extrae secciones a perfil (fase MVP+)
+
+### Flujos de usuario
+1. **Crear desde cero:** Hub → completar secciones en orden sugerido
+2. **Importar CV:** DocumentPicker PDF → AIService parsea → pre-rellena experiencia/educación/skills
+3. **Actualizar sección:** tap en tarjeta hub → editor específico → guardar SwiftData
+4. **Descargar CV:** CVVersionsView → Generar PDF (PDFKit/CoreGraphics) → Share/Guardar
+
+
+8) Módulo de búsqueda y filtros (incluye empleos en español)
+
+### Búsqueda en tiempo real
+- Query full-text en título, empresa, descripción, tags
+- Agregación paralela multi-fuente con deduplicación
+- Fallback caché offline si sin red
+
+### Filtros inspirados en LinkedIn
+
+| Filtro | Tipo | Implementación |
+|--------|------|----------------|
+| Ubicación | multi-select | países, regiones (LATAM, España, UE) |
+| Tipo trabajo | toggle/set | remoto, híbrido, presencial |
+| Nivel experiencia | set | intern, junior, mid, senior, lead |
+| Fecha publicación | enum | 24h, semana, mes, cualquiera |
+| Salario | rango | min/max + moneda |
+| Empresa | texto | filtro por nombre |
+| Industria | tags | tech, marketing, diseño... |
+| Función | tags | desarrollo, soporte, ventas... |
+| Título | texto | incluido en query |
+| Beneficios | tags | si disponible en fuente |
+
+### Filtros específicos habla hispana
+
+| Filtro | Valores |
+|--------|---------|
+| Idioma anuncio | español, inglés, bilingüe, cualquiera |
+| Mercado objetivo | Venezuela, LATAM, España, UE, global |
+| Huso horario compatible | UTC-4 (Venezuela), UTC-5 (Colombia/México), UTC+1 (España), flexible |
+| Fuente | Remotive, Arbeitnow, RemoteOK, RSS español, manual |
+
+### Extensión JobFilter (propuesta)
+```swift
+struct JobFilter: Codable {
+    // existentes...
+    var jobLanguages: Set<JobLanguage>      // .spanish, .english, .bilingual
+    var targetMarkets: Set<TargetMarket>    // .venezuela, .latam, .spain, .eu
+    var timezoneCompatibility: TimezoneFilter
+    var publishedWithin: PublicationWindow
+    var companyQuery: String
+    var jobFunction: Set<String>
+    var benefits: Set<String>
+}
+```
+
+### UI Search
+- `SearchView` + `FilterSheetView` con secciones agrupadas
+- Chips rápidos: "Español", "Remoto LATAM", "Compatible Venezuela"
+- Ordenar: más reciente, mayor salario, relevancia (IA futura)
+
+### Detalle vacante
+- Badges idioma ES/EN
+- Score de encaje (IA, sección 9)
+- CTAs: Guardar, Aplicar (Safari), Analizar, Contactar
+
+
+9) Módulo de IA
+
+**Arquitectura:** AIService + AIAssistantUseCase → proxy backend (OpenAI-compatible o propio). API key en Keychain solo dev; producción sin key en cliente.
+
+### Capacidades obligatorias
+
+| Capacidad | Input | Output | Idiomas |
+|-----------|-------|--------|---------|
+| Respuestas STAR | pregunta + perfil + vacante | respuesta estructurada S-T-A-R | ES, EN |
+| Prep entrevista | vacante + perfil | lista preguntas + guía | ES, EN |
+| Adaptar CV | CV + vacante | resumen, skills, logros ajustados | ES, EN |
+| Cover letters | vacante + perfil + tono | carta completa | ES, EN |
+| About LinkedIn | perfil completo | texto optimizado SEO empleo | ES, EN |
+| Mejoras perfil/CV | perfil | lista sugerencias concretas priorizadas | ES |
+| Análisis oferta | descripción vacante + perfil | encaje %, keywords, riesgos, mensaje reclutador | ES, EN |
+| Guion video pitch | perfil + rol objetivo | script 60–90s | ES, EN |
+| Recomendar filtros/alertas | historial búsqueda + perfil | filtros sugeridos + alerta propuesta | ES |
+| Parsear CV importado | PDF texto | secciones estructuradas | ES, EN |
+| Optimización ATS | CV + vacante | score, matched/missing keywords | ES, EN |
+
+### Flujos UI (Features/AI/)
+- `AIHubView` — lista capacidades
+- `AIInterviewView` — simulación con feedback
+- `AICoverLetterView` — generar + exportar
+- `ATSOptimizationView` — score visual
+- `AIAnswerHelperView` — STAR responses
+- `JobAnalysisView` (nuevo) — encaje + riesgos + mensaje
+- `LinkedInAboutView` (nuevo) — generar About
+- `VideoScriptView` (nuevo) — guion pitch
+- `ProfileSuggestionsView` (nuevo) — mejoras perfil
+
+### Consideraciones App Store
+- Declarar uso de IA en metadata y privacy policy
+- No generar contenido engañoso; disclaimer "revisar antes de enviar"
+- Datos enviados al backend: minimización (solo secciones necesarias)
+- Sin almacenar conversaciones en servidores sin consentimiento
+
+
+10) Módulo de archivos y portafolio
+
+### Tipos soportados
+| Tipo | Extensiones | Preview | Almacenamiento |
+|------|-------------|---------|----------------|
+| CV | PDF, DOCX | PDFKit | Secure dir + SwiftData |
+| Carta presentación | PDF, TXT | PDFKit/Text | idem |
+| Referencias | PDF | PDFKit | idem |
+| Portafolio | PDF, PPTX | PDFKit | idem |
+| Imágenes | JPG, PNG, WEBP | Image | idem |
+| Video pitch | MP4, MOV | AVKit | idem + límite 100MB |
+| Reels/clips | MP4 | AVKit | idem |
+
+### Operaciones
+- **Importar:** UIDocumentPickerViewController (Apple docs [web:42]), PhotosPicker
+- **Subir (cloud futuro):** APIClient.upload con progress callback
+- **Descargar:** APIClient.download + progress
+- **Exportar:** ShareLink, UIActivityViewController
+- **Preview:** DocumentPreviewView (PDFKit, Image, AVPlayer)
+- **Versionado:** CVVersion en SwiftData con historial
+- **Eliminar:** borrado seguro FileProtectionService.deleteSecurely
+
+### Seguridad archivos
+- Directorio: Application Support/ChambeaDocuments
+- FileProtection: completeUntilFirstUserAuthentication
+- Sin almacenar en iCloud sin opt-in explícito
+- Validación MIME y tamaño antes de guardar
+
+
+11) Seguridad y privacidad
+
+### Permisos iOS
+
+| Permiso | Key Info.plist | Cuándo pedir | Explicación al usuario (español simple) |
+|---------|----------------|--------------|----------------------------------------|
+| Fotos (lectura) | NSPhotoLibraryUsageDescription | Importar foto CV/portafolio | "Necesitamos acceder a tus fotos solo cuando elijas importar una imagen para tu perfil o portafolio." |
+| Fotos (guardar) | NSPhotoLibraryAddUsageDescription | Exportar documento | "Solo guardamos archivos en tu galería si tú lo autorizas al exportar." |
+| Cámara | NSCameraUsageDescription | Grabar video pitch | "Usamos la cámara únicamente para grabar tu video de presentación profesional." |
+| Micrófono | NSMicrophoneUsageDescription | Grabar video con audio | "El micrófono se usa solo al grabar tu video de presentación." |
+| Notificaciones | NSUserNotificationsUsageDescription | Post-onboarding / crear alerta | "Te avisamos cuando haya empleos remotos que coincidan con tus filtros." |
+| Tracking (ATT) | NSUserTrackingUsageDescription | Solo si analytics cross-app | "Solo si activas estadísticas opcionales. Chambea no vende tus datos." — **Recomendación: NO usar tracking; evitar ATT.** |
+
+### Protección de datos
+- Tokens/API keys → Keychain (kSecAttrAccessibleWhenUnlockedThisDeviceOnly)
+- Archivos sensibles → FileProtection completo
+- Sin logs de PII en producción
+- Cifrado en tránsito: HTTPS TLS 1.2+
+
+### Navegación web
+- SFSafariViewController para LinkedIn/Computrabajo/ofertas (no WKWebView con cookies persistentes)
+- Sin inyección de credenciales del usuario
+- Sin scraping de contenido web
+
+### App Store Review Guidelines compliance [web:22][web:31][web:32]
+- **1.1 Seguridad:** datos usuario protegidos; sin malware
+- **2.1 Performance:** app completa y funcional al review
+- **2.3 Metadata:** descripción precisa, screenshots reales, mención fuentes legales
+- **2.5 Software requirements:** APIs públicas iOS documentadas
+- **5.1 Privacy:** privacy policy URL, nutrition labels, minimización datos
+- **5.1.1 Data collection:** declarar datos de perfil, archivos, uso de IA
+- **5.1.2 Permission:** usage descriptions claras en español
+- **4.0 Design:** HIG compliance, accesibilidad
+- **ITSAppUsesNonExemptEncryption:** false (ya en Info.plist)
+
+### Políticas
+- Privacy Policy (qué se guarda, dónde, retención, derecho eliminación)
+- Términos de uso
+- DataManagementView: exportar JSON perfil + eliminar cuenta local
+
+### Red local
+- NWPathMonitor para sync; sin escaneo LAN innecesario (WWDC Local Network Privacy [web:37])
+
+
+12) Integración con fuentes de empleo
+
+**REGLA ABSOLUTA: NO SCRAPING.** Solo métodos legales: APIs oficiales, RSS públicos, endpoints públicos documentados, navegación permitida (Safari), carga manual/importación por usuario.
+
+### Matriz de fuentes
+
+| Fuente | Método legal | Idioma/mercado | Estado | Alternativa si no API |
+|--------|-------------|----------------|--------|----------------------|
+| Remotive | API pública `remotive.com/api` | EN, algunos ES | Implementado | — |
+| Arbeitnow | API pública | EN/DE | Implementado | — |
+| RemoteOK | API pública | EN | Implementado | — |
+| Working Nomads (Spanish) | RSS feed Spanish jobs [web:76] | ES remoto | Roadmap V1 | RSSJobSource parser |
+| RemoteRocketship LATAM Spanish [web:70] | RSS/deep links permitidos | ES LATAM | Roadmap V1 | Abrir en Safari con filtros predefinidos |
+| LinkedIn Jobs Spanish worldwide [web:78] | **Sin API pública búsqueda** | ES/EN global | Navegación | `DeepLinkJobSource` abre URL búsqueda: `linkedin.com/jobs/search?keywords=remoto&location=Spain&f_WT=2` + guía filtros [web:68][web:75] |
+| Computrabajo | **Sin API pública** | ES LATAM/España | Navegación + manual | Safari a búsqueda remota; usuario guarda vacante manualmente; importar CV estilo guía [web:64][web:67] |
+| InfoJobs España | RSS/API partnership | ES España | Roadmap V1 | Partnership comercial |
+| Adzuna | API con key (partnership) | Multi incl. ES | Roadmap V1 | Registro API developer |
+| We Work Remotely | RSS | EN | Roadmap V1 | RSS |
+| GetonBravo, Torre.co | Deep link / partnership | LATAM ES | Roadmap V2 | Safari + manual |
+
+### Estrategia LinkedIn (sin scraping)
+1. **Perfil:** usuario edita en Chambea secciones inspiradas en LinkedIn core/recommended/additional [web:62]
+2. **Optimización:** IA genera About/skills como BridgeViewIT guidelines [web:66]
+3. **Búsqueda empleo:** botón "Buscar en LinkedIn" abre SFSafariViewController con query y filtros remoto pre-construidos [web:68]
+4. **Guardar vacante:** Share Extension (V2) o pegar URL → crear SavedJob manual
+
+### Estrategia Computrabajo (sin scraping)
+1. **CV:** flujo guiado estilo "crear buen CV" [web:64] dentro de Chambea
+2. **Búsqueda:** deep link Safari a `computrabajo.com` con filtros teletrabajo
+3. **Importar:** usuario descarga CV de Computrabajo → importa PDF a Chambea
+
+### Agregador
+```swift
+JobSourceAggregator.fetchAll(query:filter:)
+  → TaskGroup paralelo por fuente habilitada
+  → tolera fallo individual
+  → deduplica por title+company
+  → aplica JobFilter.matches() incluyendo jobLanguages, targetMarkets
+```
+
+### RSS Job Source (nuevo)
+- Parser XML nativo (XMLParser)
+- Cache TTL 15 min
+- Filtro idioma por keywords en título/descripción
+
+
+13) Riesgos y limitaciones
+
+| Riesgo | Impacto | Mitigación |
+|--------|---------|------------|
+| LinkedIn/Computrabajo sin API búsqueda | No parity tiempo real | Safari deep links + guardado manual + RSS alternativos |
+| APIs públicas cambian/limitan rate | Búsqueda incompleta | Caché SwiftData, retry, múltiples fuentes |
+| Salarios ausentes en muchas fuentes | Filtro salario parcial | Mostrar "no disponible"; no inventar datos |
+| Video pitch almacenamiento | Espacio dispositivo | Límite 100MB, comprimir H.264, aviso al usuario |
+| IA requiere backend | Costo operativo | Proxy propio; freemium con límites |
+| Parseo CV PDF imperfecto | Datos incorrectos | Revisión usuario obligatoria post-import |
+| Venezuela conectividad | UX degradada | Modo offline robusto con sync |
+| App Review contenido IA | Rechazo posible | Disclaimers, moderación prompts, privacy policy |
+| ATT si analytics | Friction | Evitar tracking cross-app; analytics first-party opcional |
+
+**Limitaciones honestas:** Chambea no reemplaza apps nativas LinkedIn/Computrabajo para networking social ni mensajería con reclutadores. Se posiciona como **hub de empleabilidad remota hispanohablante** con perfil multimedia + IA + agregación legal.
+
+
+14) Roadmap por fases (MVP, versión 1, versión 2)
+
+### MVP (4–6 semanas)
+- [x] Arquitectura MVVM-C, DI, APIClient, SwiftData
+- [x] Búsqueda 3 APIs públicas (Remotive, Arbeitnow, RemoteOK)
+- [x] Filtros base + guardado vacantes
+- [x] Documents: import/preview PDF/imagen/video
+- [ ] **ProfileHub** con secciones a–g básicas
+- [ ] Video pitch: subir MP4 + preview (sin trim)
+- [ ] IA: cover letter + ATS + STAR (via backend proxy)
+- [ ] Filtros idioma ES/EN + mercado LATAM
+- [ ] Deep links LinkedIn/Computrabajo Safari
+- [ ] Privacy policy + App Store metadata
+- [ ] Tests unitarios filtros + profile model
+
+### Versión 1 (8–12 semanas)
+- RSS Working Nomads Spanish + RemoteRocketship
+- ProfileHub completo a–i con versionado CV
+- Video trim básico + grabación cámara
+- Importar CV PDF → parseo IA
+- Exportar CV PDF generado
+- JobAnalysisView (encaje + riesgos)
+- Alertas push background
+- i18n completa es/en/pt
+- Adzuna API (si partnership)
+
+### Versión 2 (16–20 semanas)
+- Share Extension guardar vacantes desde Safari
+- Partnerships InfoJobs, Torre.co
+- Recomendaciones IA filtros/alertas
+- LinkedIn About generator + VideoScript
+- Widget alertas + Live Activities
+- Cuenta cloud opcional (CloudKit)
+- Analytics first-party (sin ATT)
+
+
+15) Prompt técnico final para generar el proyecto base en Xcode
+
+```
+PROYECTO: Chambea — App iOS (iPhone, iOS 17+) para empleo remoto internacional en español e inglés.
+Bundle ID: com.chambea.app | Idioma primario: es | i18n: es, en, pt
+
+═══ ARQUITECTURA ═══
+Swift 5+, SwiftUI, MVVM-C, async/await, URLSession (APIClient + RetryPolicy), SwiftData, Keychain, DIContainer.
+Coordinator: AppCoordinator gestiona tabs y onboarding.
+Tests: ChambeaTests (unit), ChambeaUITests (UI).
+
+═══ ESTRUCTURA CARPETAS ═══
+Chambea/App/{ChambeaApp,AppCoordinator,DIContainer}
+Chambea/Core/{Networking,Persistence,Security,Extensions,Utilities}
+Chambea/Domain/{Models,Repositories,UseCases}
+Chambea/Data/{DTOs,Mappers,Services/JobSources}
+Chambea/DesignSystem/{Theme,Components}
+Chambea/Features/{Search,Jobs,Saved,ProfileHub,Documents,AI,Alerts,Settings}
+Chambea/Navigation/MainTabView
+Chambea/Resources/{Assets.xcassets,Localizable.xcstrings,Info.plist}
+
+═══ TABS ═══
+Buscar | Guardados | Perfil y CV | IA | Ajustes
+
+═══ MODELOS DOMAIN ═══
+Job, JobFilter (con jobLanguages, targetMarkets, timezoneCompatibility, publishedWithin),
+SavedJob, JobAlert, ProfessionalProfile (contiene BasicInfo, AboutBilingual, [ExperienceEntry],
+[EducationEntry], [CertificationEntry], [LanguageSkill], [PortfolioLink], [SocialLink],
+ContactInfo con visibility, PresentationVideo, [CVVersion]), UserDocument, AIModels.
+
+═══ PROFILE HUB (Features/ProfileHub/) ═══
+ProfileHubView — grid secciones con % completitud
+BasicInfoEditorView — foto, titular ES/EN, ubicación, timezone, disponibilidad
+AboutEditorView — resumen corto/largo ES/EN
+ExperienceEditorView — historial con tags sector y flag remoto/internacional
+EducationEditorView — estudios + certificaciones
+SkillsEditorView — técnicas, blandas, idiomas CEFR
+PortfolioEditorView — URLs (web, GitHub, YouTube, TikTok) + PDFs adjuntos
+SocialContactEditorView — LinkedIn, X, Instagram, TikTok, web, email, WhatsApp + visibility
+PresentationVideoView — grabar/subir MP4, preview AVKit, trim sliders, tag idioma
+CVVersionsView — historial versiones, importar/exportar PDF
+
+═══ BÚSQUEDA (Features/Search/) ═══
+SearchView, SearchViewModel, FilterSheetView
+Filtros: ubicación, remoto/híbrido/presencial, seniority, fecha, salario, empresa, industria,
+función, beneficios, idioma anuncio (ES/EN/bilingüe), mercado (VE/LATAM/ES/UE), huso Venezuela.
+JobSourceAggregator: RemotiveJobSource, ArbeitnowJobSource, RemoteOKJobSource, RSSJobSource.
+DeepLinkJobSource: URLs Safari para LinkedIn/Computrabajo (SIN SCRAPING).
+
+═══ IA (Features/AI/ + Data/Services/AIService) ═══
+Capacidades: STAR ES/EN, prep entrevista, adaptar CV, cover letters, About LinkedIn,
+mejoras perfil, análisis oferta (encaje/keywords/riesgos/mensaje), guion video, filtros sugeridos,
+parseo CV, ATS. Backend proxy obligatorio en producción. Keychain solo dev.
+
+═══ ARCHIVOS (Features/Documents/) ═══
+UIDocumentPicker, PhotosPicker, upload/download con progress, preview PDF/Image/Video,
+FileProtection, CVVersion historial, ShareLink export.
+
+═══ SEGURIDAD Info.plist ═══
+NSPhotoLibraryUsageDescription, NSPhotoLibraryAddUsageDescription,
+NSCameraUsageDescription, NSMicrophoneUsageDescription,
+NSUserNotificationsUsageDescription, ITSAppUsesNonExemptEncryption=false.
+SFSafariViewController para webs externas. Sin ATT (no tracking).
+
+═══ FUENTES EMPLEO (SOLO LEGALES, NO SCRAPING) ═══
+APIs: Remotive, Arbeitnow, RemoteOK, Adzuna (partnership).
+RSS: Working Nomads Spanish, We Work Remotely.
+Navegación: LinkedIn Jobs Spanish, Computrabajo teletrabajo (deep links Safari).
+Manual: guardar vacante por URL pegada.
+
+═══ DESIGN SYSTEM ═══
+ChambeaTheme, JobCardView, ChambeaBadge, ChambeaChip, SkeletonView, EmptyStateView,
+PrimaryButton. Modo claro/oscuro. Accesibilidad VoiceOver + Dynamic Type.
+
+═══ XCODEGEN ═══
+project.yml, deployment target iOS 17, Swift 5, tests incluidos.
+Generar: xcodegen generate --spec project.yml
+
+═══ CRITERIO DE ÉXITO ═══
+Compila en Xcode. Tabs funcionales. Búsqueda agrega ≥1 fuente. ProfileHub navegable.
+Importar PDF funciona. Preview PDF/video funciona. IA scaffold con placeholder.
+Cumple App Store Guidelines privacidad y permisos.
+```
+
+
+FIN DEL DOCUMENTO — 15 secciones completas en orden obligatorio.

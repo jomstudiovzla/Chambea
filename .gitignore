@@ -1,0 +1,37 @@
+# Xcode
+build/
+DerivedData/
+*.xcuserstate
+*.xcscmblueprint
+xcuserdata/
+
+# Swift Package Manager
+.build/
+.swiftpm/
+Package.resolved
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Secrets
+*.p12
+*.mobileprovision
+.env
+.env.*
+
+# Archives & export
+*.ipa
+*.dSYM.zip
+*.dSYM
+ExportOptions.plist
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
+
+# IDE
+.idea/
+*.swp
+*~

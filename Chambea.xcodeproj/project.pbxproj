@@ -1,0 +1,1095 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		020F498345365A33B36C04BF /* SkeletonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39F66813594370DAB0474DD /* SkeletonView.swift */; };
+		0CC7DE859E5346F408B208C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30B95922255A637FCABA44B8 /* Assets.xcassets */; };
+		14330B4E8D1E4C1C108B5233 /* AIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC462E78BB4C5EDD258E3443 /* AIService.swift */; };
+		15BD3361D06B7069DE41559A /* SavedJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A1E932EA81F9F4F62D2650 /* SavedJob.swift */; };
+		1686DF45F7956B93921772AE /* JobFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1835A6B6D09A369550155D83 /* JobFilter.swift */; };
+		179A1B5C983BF483BFA46F13 /* ProfileEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22E67CA46AA93B2229EB0EF /* ProfileEditorView.swift */; };
+		19D6CFB8B5C6B65E025A927B /* RemoteOKJobSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC8F34605EA7BA177BD5655 /* RemoteOKJobSource.swift */; };
+		1B7965D8315861713B37DC50 /* JobDTOs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F1B26CB16FC4041A171FB6 /* JobDTOs.swift */; };
+		1D98AF06F920694DA0656F68 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AFB0CB0F744B42FE37C522 /* RequestBuilder.swift */; };
+		2BDB27425FAEF958AED36DB0 /* FilterSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1854A98C5F93708FDE358BD2 /* FilterSheetView.swift */; };
+		2BFF3E9113C658A28A1EA601 /* ProfileAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71325143DFA624E814830F9D /* ProfileAvatarView.swift */; };
+		2F0F79FC68BF59094F2EAC05 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E87E9884DB0EDBBF7B1648 /* SettingsView.swift */; };
+		369776757EA22BD2FD745CB2 /* SavedJobsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C5C31CAEB772A45CB1366C /* SavedJobsView.swift */; };
+		3763CE1A0492AD2082AC9979 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F19C89EE78FE683F41EF4C /* KeychainService.swift */; };
+		394DF7A2E8E4A85C54C47A10 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384F4C3994704044CAD220EA /* UserProfile.swift */; };
+		3978E94452456DD07A72F7F1 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BADCF92C2DC8F7C11BA352 /* PrimaryButton.swift */; };
+		3D78B7A4F1518D74B4FD1E06 /* SearchJobsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B1C1F6E9AA2815B0FDB609 /* SearchJobsUseCase.swift */; };
+		407BA7C397BC67CA9DEA0FFB /* ChambeaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55265FEB6FAFAC0F91DDD2A1 /* ChambeaUITests.swift */; };
+		4273623CBCC8F3EDDD485277 /* DocumentRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042027641DA5E01EE44B14BA /* DocumentRepositoryProtocol.swift */; };
+		42A6AEA291A6A97CF02589A6 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE05556AEDCC9B5F68927F12 /* OnboardingView.swift */; };
+		439B9274AB4DB075D93F22B4 /* PrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3512B07E845086138532CE /* PrivacyPolicyView.swift */; };
+		4AF50BFF7BAB7A24E42B6579 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57838716FFB113ED7A843954 /* SearchView.swift */; };
+		4C498234D692DB674792844A /* CompanyLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA19DA57204E7A1296176CE /* CompanyLogoView.swift */; };
+		516C21B9876890B46EE70BF6 /* DocumentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0F5A35B10B07882B4C86AC /* DocumentRepository.swift */; };
+		5173C5536D6FD6F557AAA99E /* DocumentsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2950A6F4CE0A38AAD161F9E8 /* DocumentsViewModel.swift */; };
+		523E476616F9B0D0E272673E /* FileProtectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80CB4B6DDFE742747A6FA8E /* FileProtectionService.swift */; };
+		5573C97C1DD419E4380A0E5E /* JobCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B9F3B72FB24ACE618ED812 /* JobCardView.swift */; };
+		55C3A3EF92D2ED1F99321FF7 /* JobRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643F71C35D4E195F653D21BC /* JobRepository.swift */; };
+		563EE868729C6952B2202FC6 /* AlertsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E0D995B7DBE3199F423C7F /* AlertsView.swift */; };
+		5FD95A72F9C376712D90F62C /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91E8176C4BCE79A221A99285 /* DIContainer.swift */; };
+		6064C5B52D92970478CFE5F2 /* AlertRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7594D7717EF6D70E062F8C41 /* AlertRepositoryProtocol.swift */; };
+		64E02A7F60211D12BC9E50C1 /* ProfileRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F819EB95EC7B503D3FC1608 /* ProfileRepository.swift */; };
+		6A3B9C45B2482153A3287D42 /* JobDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1767EA79601F139112D26BEC /* JobDetailView.swift */; };
+		6D18B99B9E28A6870B36ACB1 /* ChambeaChip.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE00AA5FFCE5E93FC11DF1E5 /* ChambeaChip.swift */; };
+		6D51CF3FCBD1CA9C7E62B1C5 /* SwiftDataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA1FEEC3A6012E6988D3D0A /* SwiftDataModels.swift */; };
+		6DAC4D6ACAFAF86D69445F84 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2A217ACFC288FD41EE22E68 /* AppCoordinator.swift */; };
+		6E5C2C3F055B31F9C50BAE22 /* RemotiveJobSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6D65814004B7F6EE3FB3E6 /* RemotiveJobSource.swift */; };
+		6EDEF47D1C6F7C5101D464DC /* JobMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F403B8C2C8CF6759BD6018 /* JobMapper.swift */; };
+		6F580B9CE6EC0BF7A33A055D /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F53198028AA610999E894D /* Document.swift */; };
+		702AF90C19C7CBB89782546A /* AIAssistantUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F774F67A2B063DED1B6E1AE2 /* AIAssistantUseCase.swift */; };
+		7608A2EA616DB6BEC4B63875 /* DocumentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6092D35C8613485C02F061B /* DocumentsView.swift */; };
+		7972BDE3E13B4E490C7666FB /* AccessibilityIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C3065BEEDB27861E745AFE /* AccessibilityIdentifiers.swift */; };
+		7BF5AD8A6BC6E11B0058BCD8 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D3FE63069D82030996AB29 /* SearchViewModel.swift */; };
+		7CAC9862390CF16A394234B2 /* JobRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38C5E05D9E20EEEE55BA56D /* JobRepositoryProtocol.swift */; };
+		7EA58F775A8AEDF4286443F0 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74D23B9CDA894C5B1F98780 /* Message.swift */; };
+		7FD7C97CAB4719B06E6E88BC /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566C113B6C0D4A5445660932 /* EmptyStateView.swift */; };
+		805D4251973256449FFF35B5 /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = A843633A0235B993871124BB /* Job.swift */; };
+		80AFBF6453510AE099153FF6 /* DocumentPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F0F775EB0159ADC2B6442D /* DocumentPickerView.swift */; };
+		907CC0A3A80CBA58BB21CAA4 /* AIInterviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE8F6C9E3B8748D20DEA00F /* AIInterviewView.swift */; };
+		90F1E258CD75EAF753A22785 /* DataManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF654C093C0F3119378B77A3 /* DataManagementView.swift */; };
+		930CDFA2891CFA662C55EB38 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF521CBF1A193E58656D7D9 /* MainTabView.swift */; };
+		9F033D066946256E3B965704 /* ProfileRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33BF666C8145EE6C570679FF /* ProfileRepositoryProtocol.swift */; };
+		A78ECC799287A44CF1063C93 /* JobFilterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8F0D5AE5EF8A660871C4FE /* JobFilterTests.swift */; };
+		A97EFC55B792D70F12BD9631 /* AICoverLetterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEFA66B1AB7A77EE6DFCF47 /* AICoverLetterView.swift */; };
+		ABE07D2AF78B1788768F4BFF /* ProfileHubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7558574B98C67237B7C24245 /* ProfileHubView.swift */; };
+		F1A2B3C4D5E6789012345601 /* JobLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A2B3C4D5E6789012345602 /* JobLanguage.swift */; };
+		F1A2B3C4D5E6789012345603 /* PortfolioLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A2B3C4D5E6789012345604 /* PortfolioLink.swift */; };
+		F1A2B3C4D5E6789012345605 /* JobLanguageDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A2B3C4D5E6789012345606 /* JobLanguageDetector.swift */; };
+		F1A2B3C4D5E6789012345607 /* RSSJobSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A2B3C4D5E6789012345608 /* RSSJobSource.swift */; };
+		F1A2B3C4D5E6789012345609 /* FindjobitJobSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A2B3C4D5E678901234560A /* FindjobitJobSource.swift */; };
+		F1A2B3C4D5E678901234560B /* JobicyJobSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A2B3C4D5E678901234560C /* JobicyJobSource.swift */; };
+		F1A2B3C4D5E678901234560D /* DeepLinkJobSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A2B3C4D5E678901234560E /* DeepLinkJobSource.swift */; };
+		F1A2B3C4D5E678901234560F /* PortfolioEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A2B3C4D5E6789012345610 /* PortfolioEditorView.swift */; };
+		B1CB6745CE508E6CB6AE5A1B /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = A7258D323AC69BF9E54AFA34 /* Localizable.xcstrings */; };
+		B2814C0D8B6725869144C279 /* AIHubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5082E76AEA4F3C73BD6A4B /* AIHubView.swift */; };
+		B571A9C1E54F3BB7BBDCB236 /* String+HTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF8FE4B6A93AD77E5C24028 /* String+HTML.swift */; };
+		B590FA522E97778D1565CCE6 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3000758A30281480A0F3CBA9 /* ProfileView.swift */; };
+		B91BCB70195E3FB50ADA4B5B /* JobAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753CDEA1861514531355889B /* JobAlert.swift */; };
+		BB1A88367EDFE0EDB1B0C1E5 /* JobSourceAggregator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0C2C4D5E226868A03F0A91 /* JobSourceAggregator.swift */; };
+		BEF2CCBF84762285A4B5F3ED /* MessagingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1577792DCBD65432F633B6 /* MessagingView.swift */; };
+		C0BDEBA4EF713877925808C7 /* AIModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D7ECEF7401DCB3F117ABF3 /* AIModels.swift */; };
+		C0CF82CA7C637883DF02B5A6 /* AlertRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3D0C7EF3F1BCD36D7BF60E /* AlertRepository.swift */; };
+		C2975D655D78D896F107DF33 /* RetryPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A425B1EF03DF166B739FF3 /* RetryPolicy.swift */; };
+		C553FC42783A03D1BD289458 /* ATSOptimizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580629909339E5F3AF7D9CE7 /* ATSOptimizationView.swift */; };
+		C80EDE293B66FD553008BC71 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405178B5638DB4493F21E407 /* NotificationService.swift */; };
+		CE02F2E36A8C7A8FEE9823AC /* ArbeitnowJobSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A56C4B152B789D6DFA4370 /* ArbeitnowJobSource.swift */; };
+		D338E3FC5C0280E49ABF9120 /* DocumentPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE31EF4F682A74B02785A80 /* DocumentPreviewView.swift */; };
+		D37C1C5712C5D36BC6C12173 /* ChambeaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D85ACF29AA317570B0E40B /* ChambeaApp.swift */; };
+		DC9C0D976ED0C44527CE530D /* ChambeaBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB0990CF96F27BECCE07749 /* ChambeaBadge.swift */; };
+		E052F902891F884465D6818F /* AIAnswerHelperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B143D8C1D379A13783E19E0 /* AIAnswerHelperView.swift */; };
+		E2933CF0A214C744B4369956 /* SyncService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C787C85202C12EE446FA727 /* SyncService.swift */; };
+		E48D0455E7C9ED1E2C49CF5C /* JobSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26EE99C4920D0636DB30411A /* JobSourceProtocol.swift */; };
+		E7AA1C45017CAF615071F3E0 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B325B3605173E147ED1A1B4 /* APIClient.swift */; };
+		EB1F892DF10F7B1ADB6466FB /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034786C67E15C03916B4BE0A /* Endpoint.swift */; };
+		EFC677242C1A2537CE166DF4 /* ManageDocumentsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945EE9B15B3F301CE1C2C9FA /* ManageDocumentsUseCase.swift */; };
+		F82FE6F8CD06660B1025B815 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7321AC7AD5A0DA294FB48616 /* NetworkError.swift */; };
+		FE015E22470039BD07D761D8 /* JobMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D120A3DB60445D3D6943D42 /* JobMapperTests.swift */; };
+		FE6D319B9F33727011396572 /* ChambeaTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8260E757A59883C693FE09 /* ChambeaTheme.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2E14F47CABD0F496BAFF57F6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD1E9BE8FEDFB48BCC19244D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7C70BC160C5E5BC3734EF31C;
+			remoteInfo = Chambea;
+		};
+		DFAB45919813AD10B88827CE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD1E9BE8FEDFB48BCC19244D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7C70BC160C5E5BC3734EF31C;
+			remoteInfo = Chambea;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		034786C67E15C03916B4BE0A /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		042027641DA5E01EE44B14BA /* DocumentRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentRepositoryProtocol.swift; sourceTree = "<group>"; };
+		0FEFA66B1AB7A77EE6DFCF47 /* AICoverLetterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AICoverLetterView.swift; sourceTree = "<group>"; };
+		16E87E9884DB0EDBBF7B1648 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		1767EA79601F139112D26BEC /* JobDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetailView.swift; sourceTree = "<group>"; };
+		17A1E932EA81F9F4F62D2650 /* SavedJob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedJob.swift; sourceTree = "<group>"; };
+		1835A6B6D09A369550155D83 /* JobFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobFilter.swift; sourceTree = "<group>"; };
+		1854A98C5F93708FDE358BD2 /* FilterSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSheetView.swift; sourceTree = "<group>"; };
+		1CE8F6C9E3B8748D20DEA00F /* AIInterviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIInterviewView.swift; sourceTree = "<group>"; };
+		1DA19DA57204E7A1296176CE /* CompanyLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyLogoView.swift; sourceTree = "<group>"; };
+		26EE99C4920D0636DB30411A /* JobSourceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobSourceProtocol.swift; sourceTree = "<group>"; };
+		27F19C89EE78FE683F41EF4C /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
+		2950A6F4CE0A38AAD161F9E8 /* DocumentsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsViewModel.swift; sourceTree = "<group>"; };
+		2D1577792DCBD65432F633B6 /* MessagingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagingView.swift; sourceTree = "<group>"; };
+		3000758A30281480A0F3CBA9 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		30B95922255A637FCABA44B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		33BF666C8145EE6C570679FF /* ProfileRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRepositoryProtocol.swift; sourceTree = "<group>"; };
+		36AFB0CB0F744B42FE37C522 /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
+		384F4C3994704044CAD220EA /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		39E0D995B7DBE3199F423C7F /* AlertsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsView.swift; sourceTree = "<group>"; };
+		3DE31EF4F682A74B02785A80 /* DocumentPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentPreviewView.swift; sourceTree = "<group>"; };
+		405178B5638DB4493F21E407 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		40E5301E1A5FBEA6F865A4AF /* Chambea.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Chambea.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		55265FEB6FAFAC0F91DDD2A1 /* ChambeaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChambeaUITests.swift; sourceTree = "<group>"; };
+		566C113B6C0D4A5445660932 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
+		57838716FFB113ED7A843954 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		580629909339E5F3AF7D9CE7 /* ATSOptimizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATSOptimizationView.swift; sourceTree = "<group>"; };
+		5A8260E757A59883C693FE09 /* ChambeaTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChambeaTheme.swift; sourceTree = "<group>"; };
+		5B143D8C1D379A13783E19E0 /* AIAnswerHelperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIAnswerHelperView.swift; sourceTree = "<group>"; };
+		5B3D0C7EF3F1BCD36D7BF60E /* AlertRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertRepository.swift; sourceTree = "<group>"; };
+		5DA1FEEC3A6012E6988D3D0A /* SwiftDataModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataModels.swift; sourceTree = "<group>"; };
+		643F71C35D4E195F653D21BC /* JobRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobRepository.swift; sourceTree = "<group>"; };
+		68C3065BEEDB27861E745AFE /* AccessibilityIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityIdentifiers.swift; sourceTree = "<group>"; };
+		6B325B3605173E147ED1A1B4 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		6D120A3DB60445D3D6943D42 /* JobMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobMapperTests.swift; sourceTree = "<group>"; };
+		6F819EB95EC7B503D3FC1608 /* ProfileRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRepository.swift; sourceTree = "<group>"; };
+		71325143DFA624E814830F9D /* ProfileAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAvatarView.swift; sourceTree = "<group>"; };
+		7321AC7AD5A0DA294FB48616 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		753CDEA1861514531355889B /* JobAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobAlert.swift; sourceTree = "<group>"; };
+		7558574B98C67237B7C24245 /* ProfileHubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHubView.swift; sourceTree = "<group>"; };
+		7594D7717EF6D70E062F8C41 /* AlertRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertRepositoryProtocol.swift; sourceTree = "<group>"; };
+		7C0F5A35B10B07882B4C86AC /* DocumentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentRepository.swift; sourceTree = "<group>"; };
+		7C787C85202C12EE446FA727 /* SyncService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncService.swift; sourceTree = "<group>"; };
+		7EB0990CF96F27BECCE07749 /* ChambeaBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChambeaBadge.swift; sourceTree = "<group>"; };
+		82A425B1EF03DF166B739FF3 /* RetryPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetryPolicy.swift; sourceTree = "<group>"; };
+		8B3512B07E845086138532CE /* PrivacyPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyView.swift; sourceTree = "<group>"; };
+		8B8F0D5AE5EF8A660871C4FE /* JobFilterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobFilterTests.swift; sourceTree = "<group>"; };
+		8DF521CBF1A193E58656D7D9 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		91E8176C4BCE79A221A99285 /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
+		945EE9B15B3F301CE1C2C9FA /* ManageDocumentsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageDocumentsUseCase.swift; sourceTree = "<group>"; };
+		94A56C4B152B789D6DFA4370 /* ArbeitnowJobSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArbeitnowJobSource.swift; sourceTree = "<group>"; };
+		A0F1B26CB16FC4041A171FB6 /* JobDTOs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDTOs.swift; sourceTree = "<group>"; };
+		A1B1C1F6E9AA2815B0FDB609 /* SearchJobsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchJobsUseCase.swift; sourceTree = "<group>"; };
+		A2A217ACFC288FD41EE22E68 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		A5D85ACF29AA317570B0E40B /* ChambeaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChambeaApp.swift; sourceTree = "<group>"; };
+		A7258D323AC69BF9E54AFA34 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		A74D23B9CDA894C5B1F98780 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		A843633A0235B993871124BB /* Job.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
+		A9C5C31CAEB772A45CB1366C /* SavedJobsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedJobsView.swift; sourceTree = "<group>"; };
+		B5F0F775EB0159ADC2B6442D /* DocumentPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentPickerView.swift; sourceTree = "<group>"; };
+		BC5082E76AEA4F3C73BD6A4B /* AIHubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIHubView.swift; sourceTree = "<group>"; };
+		BC6D65814004B7F6EE3FB3E6 /* RemotiveJobSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemotiveJobSource.swift; sourceTree = "<group>"; };
+		BDF8FE4B6A93AD77E5C24028 /* String+HTML.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+HTML.swift"; sourceTree = "<group>"; };
+		C22E67CA46AA93B2229EB0EF /* ProfileEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditorView.swift; sourceTree = "<group>"; };
+		C2BADCF92C2DC8F7C11BA352 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
+		C31E95EE04A66E32F3A314E7 /* ChambeaTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = ChambeaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C39F66813594370DAB0474DD /* SkeletonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonView.swift; sourceTree = "<group>"; };
+		C80CB4B6DDFE742747A6FA8E /* FileProtectionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileProtectionService.swift; sourceTree = "<group>"; };
+		CC462E78BB4C5EDD258E3443 /* AIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIService.swift; sourceTree = "<group>"; };
+		CFC8F34605EA7BA177BD5655 /* RemoteOKJobSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteOKJobSource.swift; sourceTree = "<group>"; };
+		D3D7ECEF7401DCB3F117ABF3 /* AIModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIModels.swift; sourceTree = "<group>"; };
+		DE2D07B05D99CC2AB9B86B7C /* ChambeaUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = ChambeaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E38C5E05D9E20EEEE55BA56D /* JobRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobRepositoryProtocol.swift; sourceTree = "<group>"; };
+		E3F53198028AA610999E894D /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		E7D3FE63069D82030996AB29 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		E9B9F3B72FB24ACE618ED812 /* JobCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobCardView.swift; sourceTree = "<group>"; };
+		F6092D35C8613485C02F061B /* DocumentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsView.swift; sourceTree = "<group>"; };
+		F774F67A2B063DED1B6E1AE2 /* AIAssistantUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIAssistantUseCase.swift; sourceTree = "<group>"; };
+		F7F403B8C2C8CF6759BD6018 /* JobMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobMapper.swift; sourceTree = "<group>"; };
+		FB0C2C4D5E226868A03F0A91 /* JobSourceAggregator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobSourceAggregator.swift; sourceTree = "<group>"; };
+		FE00AA5FFCE5E93FC11DF1E5 /* ChambeaChip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChambeaChip.swift; sourceTree = "<group>"; };
+		FE05556AEDCC9B5F68927F12 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		FF654C093C0F3119378B77A3 /* DataManagementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagementView.swift; sourceTree = "<group>"; };
+		F1A2B3C4D5E6789012345602 /* JobLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobLanguage.swift; sourceTree = "<group>"; };
+		F1A2B3C4D5E6789012345604 /* PortfolioLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioLink.swift; sourceTree = "<group>"; };
+		F1A2B3C4D5E6789012345606 /* JobLanguageDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobLanguageDetector.swift; sourceTree = "<group>"; };
+		F1A2B3C4D5E6789012345608 /* RSSJobSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSJobSource.swift; sourceTree = "<group>"; };
+		F1A2B3C4D5E678901234560A /* FindjobitJobSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindjobitJobSource.swift; sourceTree = "<group>"; };
+		F1A2B3C4D5E678901234560C /* JobicyJobSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobicyJobSource.swift; sourceTree = "<group>"; };
+		F1A2B3C4D5E678901234560E /* DeepLinkJobSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkJobSource.swift; sourceTree = "<group>"; };
+		F1A2B3C4D5E6789012345610 /* PortfolioEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioEditorView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		02B498A3E1503AF6A4221518 /* DTOs */ = {
+			isa = PBXGroup;
+			children = (
+				A0F1B26CB16FC4041A171FB6 /* JobDTOs.swift */,
+			);
+			path = DTOs;
+			sourceTree = "<group>";
+		};
+		0D8367D6BF376A0CAFEBC6C1 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				FF654C093C0F3119378B77A3 /* DataManagementView.swift */,
+				FE05556AEDCC9B5F68927F12 /* OnboardingView.swift */,
+				8B3512B07E845086138532CE /* PrivacyPolicyView.swift */,
+				16E87E9884DB0EDBBF7B1648 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		13E4EAE875CC7473D2151806 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				6B325B3605173E147ED1A1B4 /* APIClient.swift */,
+				034786C67E15C03916B4BE0A /* Endpoint.swift */,
+				7321AC7AD5A0DA294FB48616 /* NetworkError.swift */,
+				36AFB0CB0F744B42FE37C522 /* RequestBuilder.swift */,
+				82A425B1EF03DF166B739FF3 /* RetryPolicy.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		20F0915F55B40B5A09E891D5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				40E5301E1A5FBEA6F865A4AF /* Chambea.app */,
+				C31E95EE04A66E32F3A314E7 /* ChambeaTests.xctest */,
+				DE2D07B05D99CC2AB9B86B7C /* ChambeaUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		25462743544F43D3F449B636 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				6A899BF19E28EAEC812C6433 /* Models */,
+				D8AAA76E3C3E2C8A3BBB8584 /* Repositories */,
+				78B960B56845C2AB58707999 /* UseCases */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		3107A5F4B39905476257A983 /* Security */ = {
+			isa = PBXGroup;
+			children = (
+				C80CB4B6DDFE742747A6FA8E /* FileProtectionService.swift */,
+				27F19C89EE78FE683F41EF4C /* KeychainService.swift */,
+			);
+			path = Security;
+			sourceTree = "<group>";
+		};
+		350B41E052E0D23B9541ABB5 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				7EB0990CF96F27BECCE07749 /* ChambeaBadge.swift */,
+				FE00AA5FFCE5E93FC11DF1E5 /* ChambeaChip.swift */,
+				1DA19DA57204E7A1296176CE /* CompanyLogoView.swift */,
+				566C113B6C0D4A5445660932 /* EmptyStateView.swift */,
+				E9B9F3B72FB24ACE618ED812 /* JobCardView.swift */,
+				C2BADCF92C2DC8F7C11BA352 /* PrimaryButton.swift */,
+				71325143DFA624E814830F9D /* ProfileAvatarView.swift */,
+				C39F66813594370DAB0474DD /* SkeletonView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		39BD0D680A1B91C93092D5E1 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				5DA1FEEC3A6012E6988D3D0A /* SwiftDataModels.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		4234B4DE999B1C919C61E7DC /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CC462E78BB4C5EDD258E3443 /* AIService.swift */,
+				5B3D0C7EF3F1BCD36D7BF60E /* AlertRepository.swift */,
+				7C0F5A35B10B07882B4C86AC /* DocumentRepository.swift */,
+				643F71C35D4E195F653D21BC /* JobRepository.swift */,
+				405178B5638DB4493F21E407 /* NotificationService.swift */,
+				6F819EB95EC7B503D3FC1608 /* ProfileRepository.swift */,
+				7C787C85202C12EE446FA727 /* SyncService.swift */,
+				CFD46821C85B4B5D9571282F /* JobSources */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		4A8FC6444C2673F0D8C41F9B /* Documents */ = {
+			isa = PBXGroup;
+			children = (
+				B5F0F775EB0159ADC2B6442D /* DocumentPickerView.swift */,
+				3DE31EF4F682A74B02785A80 /* DocumentPreviewView.swift */,
+				F6092D35C8613485C02F061B /* DocumentsView.swift */,
+				2950A6F4CE0A38AAD161F9E8 /* DocumentsViewModel.swift */,
+			);
+			path = Documents;
+			sourceTree = "<group>";
+		};
+		4E2FAB0D06795BBB7F69EA35 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BDF8FE4B6A93AD77E5C24028 /* String+HTML.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5BA48565B8C6317BA80DE759 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				68C3065BEEDB27861E745AFE /* AccessibilityIdentifiers.swift */,
+				F1A2B3C4D5E6789012345606 /* JobLanguageDetector.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		5DF4D0A6299D91C27A7980CA = {
+			isa = PBXGroup;
+			children = (
+				E38CF975C4FA5E37665278BA /* Chambea */,
+				88EB654DCA6B08250672AB52 /* ChambeaTests */,
+				7C7E7DB1703D183518C6FF1D /* ChambeaUITests */,
+				20F0915F55B40B5A09E891D5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		63C26194297D4BED5137452E /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				8DF521CBF1A193E58656D7D9 /* MainTabView.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		6A899BF19E28EAEC812C6433 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D3D7ECEF7401DCB3F117ABF3 /* AIModels.swift */,
+				E3F53198028AA610999E894D /* Document.swift */,
+				A843633A0235B993871124BB /* Job.swift */,
+				753CDEA1861514531355889B /* JobAlert.swift */,
+				1835A6B6D09A369550155D83 /* JobFilter.swift */,
+				F1A2B3C4D5E6789012345602 /* JobLanguage.swift */,
+				A74D23B9CDA894C5B1F98780 /* Message.swift */,
+				F1A2B3C4D5E6789012345604 /* PortfolioLink.swift */,
+				17A1E932EA81F9F4F62D2650 /* SavedJob.swift */,
+				384F4C3994704044CAD220EA /* UserProfile.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7272967727C4B2EFC4EA859E /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				5A8260E757A59883C693FE09 /* ChambeaTheme.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		7842991052E58CDE62F112D7 /* Messaging */ = {
+			isa = PBXGroup;
+			children = (
+				2D1577792DCBD65432F633B6 /* MessagingView.swift */,
+			);
+			path = Messaging;
+			sourceTree = "<group>";
+		};
+		78B960B56845C2AB58707999 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				F774F67A2B063DED1B6E1AE2 /* AIAssistantUseCase.swift */,
+				945EE9B15B3F301CE1C2C9FA /* ManageDocumentsUseCase.swift */,
+				A1B1C1F6E9AA2815B0FDB609 /* SearchJobsUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		7C7E7DB1703D183518C6FF1D /* ChambeaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				55265FEB6FAFAC0F91DDD2A1 /* ChambeaUITests.swift */,
+			);
+			path = ChambeaUITests;
+			sourceTree = "<group>";
+		};
+		87701294453608CC69223A4B /* AI */ = {
+			isa = PBXGroup;
+			children = (
+				5B143D8C1D379A13783E19E0 /* AIAnswerHelperView.swift */,
+				0FEFA66B1AB7A77EE6DFCF47 /* AICoverLetterView.swift */,
+				BC5082E76AEA4F3C73BD6A4B /* AIHubView.swift */,
+				1CE8F6C9E3B8748D20DEA00F /* AIInterviewView.swift */,
+				580629909339E5F3AF7D9CE7 /* ATSOptimizationView.swift */,
+			);
+			path = AI;
+			sourceTree = "<group>";
+		};
+		88EB654DCA6B08250672AB52 /* ChambeaTests */ = {
+			isa = PBXGroup;
+			children = (
+				8B8F0D5AE5EF8A660871C4FE /* JobFilterTests.swift */,
+				6D120A3DB60445D3D6943D42 /* JobMapperTests.swift */,
+			);
+			path = ChambeaTests;
+			sourceTree = "<group>";
+		};
+		90CCC858BBAA0FFFCD174B3D /* Alerts */ = {
+			isa = PBXGroup;
+			children = (
+				39E0D995B7DBE3199F423C7F /* AlertsView.swift */,
+			);
+			path = Alerts;
+			sourceTree = "<group>";
+		};
+		9918260FBAA08E3C12692CF3 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				3000758A30281480A0F3CBA9 /* ProfileView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		994098E7A5B55D9BF5DED37E /* App */ = {
+			isa = PBXGroup;
+			children = (
+				A2A217ACFC288FD41EE22E68 /* AppCoordinator.swift */,
+				A5D85ACF29AA317570B0E40B /* ChambeaApp.swift */,
+				91E8176C4BCE79A221A99285 /* DIContainer.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		9F9060AEFF63CAC6C924F7D7 /* Jobs */ = {
+			isa = PBXGroup;
+			children = (
+				1767EA79601F139112D26BEC /* JobDetailView.swift */,
+			);
+			path = Jobs;
+			sourceTree = "<group>";
+		};
+		A9EC48C70ECE3265681B545A /* ProfileHub */ = {
+			isa = PBXGroup;
+			children = (
+				C22E67CA46AA93B2229EB0EF /* ProfileEditorView.swift */,
+				F1A2B3C4D5E6789012345610 /* PortfolioEditorView.swift */,
+				7558574B98C67237B7C24245 /* ProfileHubView.swift */,
+			);
+			path = ProfileHub;
+			sourceTree = "<group>";
+		};
+		B2B93031FF0629567EDEA83D /* Saved */ = {
+			isa = PBXGroup;
+			children = (
+				A9C5C31CAEB772A45CB1366C /* SavedJobsView.swift */,
+			);
+			path = Saved;
+			sourceTree = "<group>";
+		};
+		C270A8A6AFAD59EA0758A6B8 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				87701294453608CC69223A4B /* AI */,
+				90CCC858BBAA0FFFCD174B3D /* Alerts */,
+				4A8FC6444C2673F0D8C41F9B /* Documents */,
+				9F9060AEFF63CAC6C924F7D7 /* Jobs */,
+				7842991052E58CDE62F112D7 /* Messaging */,
+				9918260FBAA08E3C12692CF3 /* Profile */,
+				A9EC48C70ECE3265681B545A /* ProfileHub */,
+				B2B93031FF0629567EDEA83D /* Saved */,
+				C2F603C340DD7D20659829E4 /* Search */,
+				0D8367D6BF376A0CAFEBC6C1 /* Settings */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		C2F603C340DD7D20659829E4 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				1854A98C5F93708FDE358BD2 /* FilterSheetView.swift */,
+				57838716FFB113ED7A843954 /* SearchView.swift */,
+				E7D3FE63069D82030996AB29 /* SearchViewModel.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		CF3AE90F8D6F66537297EFF8 /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				350B41E052E0D23B9541ABB5 /* Components */,
+				7272967727C4B2EFC4EA859E /* Theme */,
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		CFD46821C85B4B5D9571282F /* JobSources */ = {
+			isa = PBXGroup;
+			children = (
+				94A56C4B152B789D6DFA4370 /* ArbeitnowJobSource.swift */,
+				F1A2B3C4D5E678901234560E /* DeepLinkJobSource.swift */,
+				F1A2B3C4D5E678901234560A /* FindjobitJobSource.swift */,
+				F1A2B3C4D5E678901234560C /* JobicyJobSource.swift */,
+				FB0C2C4D5E226868A03F0A91 /* JobSourceAggregator.swift */,
+				26EE99C4920D0636DB30411A /* JobSourceProtocol.swift */,
+				CFC8F34605EA7BA177BD5655 /* RemoteOKJobSource.swift */,
+				F1A2B3C4D5E6789012345608 /* RSSJobSource.swift */,
+				BC6D65814004B7F6EE3FB3E6 /* RemotiveJobSource.swift */,
+			);
+			path = JobSources;
+			sourceTree = "<group>";
+		};
+		D0AA72DFCB9DD7D7FFB1B93D /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				02B498A3E1503AF6A4221518 /* DTOs */,
+				DC7A13E288217C368D50FD21 /* Mappers */,
+				4234B4DE999B1C919C61E7DC /* Services */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		D8AAA76E3C3E2C8A3BBB8584 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				7594D7717EF6D70E062F8C41 /* AlertRepositoryProtocol.swift */,
+				042027641DA5E01EE44B14BA /* DocumentRepositoryProtocol.swift */,
+				E38C5E05D9E20EEEE55BA56D /* JobRepositoryProtocol.swift */,
+				33BF666C8145EE6C570679FF /* ProfileRepositoryProtocol.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		DC7A13E288217C368D50FD21 /* Mappers */ = {
+			isa = PBXGroup;
+			children = (
+				F7F403B8C2C8CF6759BD6018 /* JobMapper.swift */,
+			);
+			path = Mappers;
+			sourceTree = "<group>";
+		};
+		E38CF975C4FA5E37665278BA /* Chambea */ = {
+			isa = PBXGroup;
+			children = (
+				994098E7A5B55D9BF5DED37E /* App */,
+				EFEE1D4F52B0B311C4EE601F /* Core */,
+				D0AA72DFCB9DD7D7FFB1B93D /* Data */,
+				CF3AE90F8D6F66537297EFF8 /* DesignSystem */,
+				25462743544F43D3F449B636 /* Domain */,
+				C270A8A6AFAD59EA0758A6B8 /* Features */,
+				63C26194297D4BED5137452E /* Navigation */,
+				EA9C2CFC549447EF1DD7EE18 /* Resources */,
+			);
+			path = Chambea;
+			sourceTree = "<group>";
+		};
+		EA9C2CFC549447EF1DD7EE18 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				30B95922255A637FCABA44B8 /* Assets.xcassets */,
+				A7258D323AC69BF9E54AFA34 /* Localizable.xcstrings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		EFEE1D4F52B0B311C4EE601F /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				4E2FAB0D06795BBB7F69EA35 /* Extensions */,
+				13E4EAE875CC7473D2151806 /* Networking */,
+				39BD0D680A1B91C93092D5E1 /* Persistence */,
+				3107A5F4B39905476257A983 /* Security */,
+				5BA48565B8C6317BA80DE759 /* Utilities */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1B71524B63650DD3A8AFF038 /* ChambeaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 89EF645B56D4F8CC2A966D61 /* Build configuration list for PBXNativeTarget "ChambeaUITests" */;
+			buildPhases = (
+				E1688A68840105F3DEA1773E /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3B9397A2AF1F2D5100D0DB20 /* PBXTargetDependency */,
+			);
+			name = ChambeaUITests;
+			packageProductDependencies = (
+			);
+			productName = ChambeaUITests;
+			productReference = DE2D07B05D99CC2AB9B86B7C /* ChambeaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		7C70BC160C5E5BC3734EF31C /* Chambea */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F310C6AF53054F17415EB426 /* Build configuration list for PBXNativeTarget "Chambea" */;
+			buildPhases = (
+				7F72074B85A83C1FFF560F93 /* Sources */,
+				4654FEEF9ABA5ECB1995D4B7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Chambea;
+			packageProductDependencies = (
+			);
+			productName = Chambea;
+			productReference = 40E5301E1A5FBEA6F865A4AF /* Chambea.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8FC80AB33F1603E3E175E685 /* ChambeaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 79F59628EA4371142770FDFE /* Build configuration list for PBXNativeTarget "ChambeaTests" */;
+			buildPhases = (
+				361303F57B378272F6E07CE4 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				49582E23C4C660490A329C64 /* PBXTargetDependency */,
+			);
+			name = ChambeaTests;
+			packageProductDependencies = (
+			);
+			productName = ChambeaTests;
+			productReference = C31E95EE04A66E32F3A314E7 /* ChambeaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CD1E9BE8FEDFB48BCC19244D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					1B71524B63650DD3A8AFF038 = {
+						TestTargetID = 7C70BC160C5E5BC3734EF31C;
+					};
+				};
+			};
+			buildConfigurationList = 19C041328FD1497CF32E64D2 /* Build configuration list for PBXProject "Chambea" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = es;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+				es,
+			);
+			mainGroup = 5DF4D0A6299D91C27A7980CA;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7C70BC160C5E5BC3734EF31C /* Chambea */,
+				8FC80AB33F1603E3E175E685 /* ChambeaTests */,
+				1B71524B63650DD3A8AFF038 /* ChambeaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4654FEEF9ABA5ECB1995D4B7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0CC7DE859E5346F408B208C3 /* Assets.xcassets in Resources */,
+				B1CB6745CE508E6CB6AE5A1B /* Localizable.xcstrings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		361303F57B378272F6E07CE4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A78ECC799287A44CF1063C93 /* JobFilterTests.swift in Sources */,
+				FE015E22470039BD07D761D8 /* JobMapperTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7F72074B85A83C1FFF560F93 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E052F902891F884465D6818F /* AIAnswerHelperView.swift in Sources */,
+				702AF90C19C7CBB89782546A /* AIAssistantUseCase.swift in Sources */,
+				A97EFC55B792D70F12BD9631 /* AICoverLetterView.swift in Sources */,
+				B2814C0D8B6725869144C279 /* AIHubView.swift in Sources */,
+				907CC0A3A80CBA58BB21CAA4 /* AIInterviewView.swift in Sources */,
+				C0BDEBA4EF713877925808C7 /* AIModels.swift in Sources */,
+				14330B4E8D1E4C1C108B5233 /* AIService.swift in Sources */,
+				E7AA1C45017CAF615071F3E0 /* APIClient.swift in Sources */,
+				C553FC42783A03D1BD289458 /* ATSOptimizationView.swift in Sources */,
+				7972BDE3E13B4E490C7666FB /* AccessibilityIdentifiers.swift in Sources */,
+				C0CF82CA7C637883DF02B5A6 /* AlertRepository.swift in Sources */,
+				6064C5B52D92970478CFE5F2 /* AlertRepositoryProtocol.swift in Sources */,
+				563EE868729C6952B2202FC6 /* AlertsView.swift in Sources */,
+				6DAC4D6ACAFAF86D69445F84 /* AppCoordinator.swift in Sources */,
+				CE02F2E36A8C7A8FEE9823AC /* ArbeitnowJobSource.swift in Sources */,
+				D37C1C5712C5D36BC6C12173 /* ChambeaApp.swift in Sources */,
+				DC9C0D976ED0C44527CE530D /* ChambeaBadge.swift in Sources */,
+				6D18B99B9E28A6870B36ACB1 /* ChambeaChip.swift in Sources */,
+				FE6D319B9F33727011396572 /* ChambeaTheme.swift in Sources */,
+				4C498234D692DB674792844A /* CompanyLogoView.swift in Sources */,
+				5FD95A72F9C376712D90F62C /* DIContainer.swift in Sources */,
+				90F1E258CD75EAF753A22785 /* DataManagementView.swift in Sources */,
+				6F580B9CE6EC0BF7A33A055D /* Document.swift in Sources */,
+				80AFBF6453510AE099153FF6 /* DocumentPickerView.swift in Sources */,
+				D338E3FC5C0280E49ABF9120 /* DocumentPreviewView.swift in Sources */,
+				516C21B9876890B46EE70BF6 /* DocumentRepository.swift in Sources */,
+				4273623CBCC8F3EDDD485277 /* DocumentRepositoryProtocol.swift in Sources */,
+				7608A2EA616DB6BEC4B63875 /* DocumentsView.swift in Sources */,
+				5173C5536D6FD6F557AAA99E /* DocumentsViewModel.swift in Sources */,
+				7FD7C97CAB4719B06E6E88BC /* EmptyStateView.swift in Sources */,
+				EB1F892DF10F7B1ADB6466FB /* Endpoint.swift in Sources */,
+				523E476616F9B0D0E272673E /* FileProtectionService.swift in Sources */,
+				2BDB27425FAEF958AED36DB0 /* FilterSheetView.swift in Sources */,
+				805D4251973256449FFF35B5 /* Job.swift in Sources */,
+				B91BCB70195E3FB50ADA4B5B /* JobAlert.swift in Sources */,
+				5573C97C1DD419E4380A0E5E /* JobCardView.swift in Sources */,
+				1B7965D8315861713B37DC50 /* JobDTOs.swift in Sources */,
+				6A3B9C45B2482153A3287D42 /* JobDetailView.swift in Sources */,
+				1686DF45F7956B93921772AE /* JobFilter.swift in Sources */,
+				F1A2B3C4D5E6789012345601 /* JobLanguage.swift in Sources */,
+				F1A2B3C4D5E6789012345605 /* JobLanguageDetector.swift in Sources */,
+				6EDEF47D1C6F7C5101D464DC /* JobMapper.swift in Sources */,
+				55C3A3EF92D2ED1F99321FF7 /* JobRepository.swift in Sources */,
+				7CAC9862390CF16A394234B2 /* JobRepositoryProtocol.swift in Sources */,
+				BB1A88367EDFE0EDB1B0C1E5 /* JobSourceAggregator.swift in Sources */,
+				F1A2B3C4D5E678901234560D /* DeepLinkJobSource.swift in Sources */,
+				F1A2B3C4D5E6789012345609 /* FindjobitJobSource.swift in Sources */,
+				F1A2B3C4D5E678901234560B /* JobicyJobSource.swift in Sources */,
+				F1A2B3C4D5E6789012345607 /* RSSJobSource.swift in Sources */,
+				E48D0455E7C9ED1E2C49CF5C /* JobSourceProtocol.swift in Sources */,
+				3763CE1A0492AD2082AC9979 /* KeychainService.swift in Sources */,
+				930CDFA2891CFA662C55EB38 /* MainTabView.swift in Sources */,
+				EFC677242C1A2537CE166DF4 /* ManageDocumentsUseCase.swift in Sources */,
+				7EA58F775A8AEDF4286443F0 /* Message.swift in Sources */,
+				BEF2CCBF84762285A4B5F3ED /* MessagingView.swift in Sources */,
+				F82FE6F8CD06660B1025B815 /* NetworkError.swift in Sources */,
+				C80EDE293B66FD553008BC71 /* NotificationService.swift in Sources */,
+				42A6AEA291A6A97CF02589A6 /* OnboardingView.swift in Sources */,
+				3978E94452456DD07A72F7F1 /* PrimaryButton.swift in Sources */,
+				439B9274AB4DB075D93F22B4 /* PrivacyPolicyView.swift in Sources */,
+				2BFF3E9113C658A28A1EA601 /* ProfileAvatarView.swift in Sources */,
+				179A1B5C983BF483BFA46F13 /* ProfileEditorView.swift in Sources */,
+				F1A2B3C4D5E678901234560F /* PortfolioEditorView.swift in Sources */,
+				F1A2B3C4D5E6789012345603 /* PortfolioLink.swift in Sources */,
+				ABE07D2AF78B1788768F4BFF /* ProfileHubView.swift in Sources */,
+				64E02A7F60211D12BC9E50C1 /* ProfileRepository.swift in Sources */,
+				9F033D066946256E3B965704 /* ProfileRepositoryProtocol.swift in Sources */,
+				B590FA522E97778D1565CCE6 /* ProfileView.swift in Sources */,
+				19D6CFB8B5C6B65E025A927B /* RemoteOKJobSource.swift in Sources */,
+				6E5C2C3F055B31F9C50BAE22 /* RemotiveJobSource.swift in Sources */,
+				1D98AF06F920694DA0656F68 /* RequestBuilder.swift in Sources */,
+				C2975D655D78D896F107DF33 /* RetryPolicy.swift in Sources */,
+				15BD3361D06B7069DE41559A /* SavedJob.swift in Sources */,
+				369776757EA22BD2FD745CB2 /* SavedJobsView.swift in Sources */,
+				3D78B7A4F1518D74B4FD1E06 /* SearchJobsUseCase.swift in Sources */,
+				4AF50BFF7BAB7A24E42B6579 /* SearchView.swift in Sources */,
+				7BF5AD8A6BC6E11B0058BCD8 /* SearchViewModel.swift in Sources */,
+				2F0F79FC68BF59094F2EAC05 /* SettingsView.swift in Sources */,
+				020F498345365A33B36C04BF /* SkeletonView.swift in Sources */,
+				B571A9C1E54F3BB7BBDCB236 /* String+HTML.swift in Sources */,
+				6D51CF3FCBD1CA9C7E62B1C5 /* SwiftDataModels.swift in Sources */,
+				E2933CF0A214C744B4369956 /* SyncService.swift in Sources */,
+				394DF7A2E8E4A85C54C47A10 /* UserProfile.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E1688A68840105F3DEA1773E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				407BA7C397BC67CA9DEA0FFB /* ChambeaUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3B9397A2AF1F2D5100D0DB20 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7C70BC160C5E5BC3734EF31C /* Chambea */;
+			targetProxy = 2E14F47CABD0F496BAFF57F6 /* PBXContainerItemProxy */;
+		};
+		49582E23C4C660490A329C64 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7C70BC160C5E5BC3734EF31C /* Chambea */;
+			targetProxy = DFAB45919813AD10B88827CE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0FF79D6954CFF25AE7191259 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		14830887566D157D5C34B17C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.chambea.app.uitests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Chambea;
+			};
+			name = Debug;
+		};
+		1B8AD75DFBFC7859DECCCA92 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		219059658229159D1722A9F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.chambea.app.tests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Chambea.app/Chambea";
+			};
+			name = Debug;
+		};
+		6CE3FCC4144C21DFDC8E3BF3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.chambea.app.uitests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Chambea;
+			};
+			name = Release;
+		};
+		BFEDC32FA6D82DDBB717991A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Chambea/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.chambea.app;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		CC34FFD788B05541D0727D2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.chambea.app.tests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Chambea.app/Chambea";
+			};
+			name = Release;
+		};
+		E4F18DFEE55765DB28B4A690 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Chambea/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.chambea.app;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		19C041328FD1497CF32E64D2 /* Build configuration list for PBXProject "Chambea" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B8AD75DFBFC7859DECCCA92 /* Debug */,
+				0FF79D6954CFF25AE7191259 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		79F59628EA4371142770FDFE /* Build configuration list for PBXNativeTarget "ChambeaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				219059658229159D1722A9F6 /* Debug */,
+				CC34FFD788B05541D0727D2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		89EF645B56D4F8CC2A966D61 /* Build configuration list for PBXNativeTarget "ChambeaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14830887566D157D5C34B17C /* Debug */,
+				6CE3FCC4144C21DFDC8E3BF3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		F310C6AF53054F17415EB426 /* Build configuration list for PBXNativeTarget "Chambea" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4F18DFEE55765DB28B4A690 /* Debug */,
+				BFEDC32FA6D82DDBB717991A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CD1E9BE8FEDFB48BCC19244D /* Project object */;
+}
