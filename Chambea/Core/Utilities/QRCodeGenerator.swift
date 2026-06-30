@@ -3,7 +3,7 @@ import CoreImage.CIFilterBuiltins
 import UIKit
 
 enum QRCodeGenerator {
-    static let installURL = "https://jomstudiovzla.github.io/Chambea/install.html"
+    static let installURL = AppInstallConfig.installPageURL.absoluteString
     static let repositoryURL = "https://github.com/jomstudiovzla/Chambea"
 
     static func image(from string: String, scale: CGFloat = 12) -> UIImage? {

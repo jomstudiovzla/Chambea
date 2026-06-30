@@ -71,6 +71,9 @@
 		F1A2B3C4D5E6789012345630 /* QRCodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A2B3C4D5E6789012345631 /* QRCodeGenerator.swift */; };
 		F1A2B3C4D5E6789012345632 /* QRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A2B3C4D5E6789012345633 /* QRCodeView.swift */; };
 		F1A2B3C4D5E6789012345634 /* InstallAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A2B3C4D5E6789012345635 /* InstallAppView.swift */; };
+		F1A2B3C4D5E6789012345640 /* AppInstallConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A2B3C4D5E6789012345641 /* AppInstallConfig.swift */; };
+		F1A2B3C4D5E6789012345642 /* DeviceInstallService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A2B3C4D5E6789012345643 /* DeviceInstallService.swift */; };
+		F1A2B3C4D5E6789012345644 /* InstallOnDeviceButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A2B3C4D5E6789012345645 /* InstallOnDeviceButton.swift */; };
 		A97EFC55B792D70F12BD9631 /* AICoverLetterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEFA66B1AB7A77EE6DFCF47 /* AICoverLetterView.swift */; };
 		ABE07D2AF78B1788768F4BFF /* ProfileHubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7558574B98C67237B7C24245 /* ProfileHubView.swift */; };
 		F1A2B3C4D5E6789012345601 /* JobLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A2B3C4D5E6789012345602 /* JobLanguage.swift */; };
@@ -228,6 +231,9 @@
 		F1A2B3C4D5E6789012345631 /* QRCodeGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeGenerator.swift; sourceTree = "<group>"; };
 		F1A2B3C4D5E6789012345633 /* QRCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeView.swift; sourceTree = "<group>"; };
 		F1A2B3C4D5E6789012345635 /* InstallAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstallAppView.swift; sourceTree = "<group>"; };
+		F1A2B3C4D5E6789012345641 /* AppInstallConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInstallConfig.swift; sourceTree = "<group>"; };
+		F1A2B3C4D5E6789012345643 /* DeviceInstallService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInstallService.swift; sourceTree = "<group>"; };
+		F1A2B3C4D5E6789012345645 /* InstallOnDeviceButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstallOnDeviceButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -304,6 +310,7 @@
 				71325143DFA624E814830F9D /* ProfileAvatarView.swift */,
 				C39F66813594370DAB0474DD /* SkeletonView.swift */,
 				F1A2B3C4D5E6789012345633 /* QRCodeView.swift */,
+				F1A2B3C4D5E6789012345645 /* InstallOnDeviceButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -356,6 +363,8 @@
 				68C3065BEEDB27861E745AFE /* AccessibilityIdentifiers.swift */,
 				F1A2B3C4D5E6789012345606 /* JobLanguageDetector.swift */,
 				F1A2B3C4D5E6789012345631 /* QRCodeGenerator.swift */,
+				F1A2B3C4D5E6789012345641 /* AppInstallConfig.swift */,
+				F1A2B3C4D5E6789012345643 /* DeviceInstallService.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -757,6 +766,9 @@
 				14330B4E8D1E4C1C108B5233 /* AIService.swift in Sources */,
 				E7AA1C45017CAF615071F3E0 /* APIClient.swift in Sources */,
 				C553FC42783A03D1BD289458 /* ATSOptimizationView.swift in Sources */,
+				F1A2B3C4D5E6789012345640 /* AppInstallConfig.swift in Sources */,
+				F1A2B3C4D5E6789012345642 /* DeviceInstallService.swift in Sources */,
+				F1A2B3C4D5E6789012345644 /* InstallOnDeviceButton.swift in Sources */,
 				F1A2B3C4D5E6789012345634 /* InstallAppView.swift in Sources */,
 				7972BDE3E13B4E490C7666FB /* AccessibilityIdentifiers.swift in Sources */,
 				C0CF82CA7C637883DF02B5A6 /* AlertRepository.swift in Sources */,

@@ -45,11 +45,8 @@ struct SettingsView: View {
                     NavigationLink(String(localized: "settings.privacy.data")) { DataManagementView() }
                 }
                 Section(String(localized: "settings.install.section")) {
-                    NavigationLink {
-                        InstallAppView()
-                    } label: {
-                        Label(String(localized: "settings.install.title"), systemImage: "qrcode")
-                    }
+                    InstallOnDeviceButton(style: .prominent)
+                        .listRowBackground(Color.clear)
                 }
                 Section(String(localized: "settings.about")) {
                     LabeledContent(String(localized: "settings.version"), value: "1.0.0")

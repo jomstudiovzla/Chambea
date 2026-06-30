@@ -4,6 +4,9 @@
     "" : {
 
     },
+    "%lld" : {
+
+    },
     "%lld%%" : {
 
     },
@@ -4081,6 +4084,234 @@
         }
       }
     },
+    "settings.install.how" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "How it works"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cómo funciona"
+          }
+        }
+      }
+    },
+    "settings.install.note" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iOS does not allow direct install from QR like Android. TestFlight support is coming soon."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iOS no permite instalar directo desde QR como Android. TestFlight llegará pronto."
+          }
+        }
+      }
+    },
+    "settings.install.openGuide" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open install guide"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abrir guía de instalación"
+          }
+        }
+      }
+    },
+    "settings.install.repository" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "View on GitHub"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ver en GitHub"
+          }
+        }
+      }
+    },
+    "settings.install.scan" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scan to open install guide"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Escanea para abrir la guía de instalación"
+          }
+        }
+      }
+    },
+    "settings.install.section" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Share & install"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compartir e instalar"
+          }
+        }
+      }
+    },
+    "settings.install.share" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Share install link"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compartir enlace de instalación"
+          }
+        }
+      }
+    },
+    "settings.install.step1" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scan the QR with another iPhone or share the link"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Escanea el QR con otro iPhone o comparte el enlace"
+          }
+        }
+      }
+    },
+    "settings.install.step2" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open the guide and download the project on a Mac"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abre la guía y descarga el proyecto en un Mac"
+          }
+        }
+      }
+    },
+    "settings.install.step3" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Run the app from Xcode on the connected iPhone"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ejecuta la app desde Xcode en el iPhone conectado"
+          }
+        }
+      }
+    },
+    "settings.install.subtitle" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Share this QR so others can install Chambea from GitHub"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comparte este QR para que otros instalen Chambea desde GitHub"
+          }
+        }
+      }
+    },
+    "settings.install.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Install on iPhone"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Instalar en iPhone"
+          }
+        }
+      }
+    },
+    "settings.install.oneTap" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Install on your device" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Instalar en tu dispositivo" } }
+      }
+    },
+    "settings.install.oneTap.subtitle" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "One tap to install Chambea on your iPhone" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Un toque para instalar Chambea en tu iPhone" } }
+      }
+    },
+    "settings.install.oneTap.hint" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Tap Install when iOS asks for confirmation." } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Toca Instalar cuando iOS pida confirmación." } }
+      }
+    },
+    "settings.install.unavailable.title" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Install not ready yet" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Instalación aún no disponible" } }
+      }
+    },
+    "settings.install.unavailable.message" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "The signed app package must be published first. Use Xcode on Mac meanwhile." } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Primero hay que publicar el paquete firmado. Mientras tanto usa Xcode en Mac." } }
+      }
+    },
+    "ok" : {
+      "localizations" : {
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "OK" } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "OK" } }
+      }
+    },
     "settings.language" : {
       "localizations" : {
         "en" : {
@@ -4255,78 +4486,6 @@
             "value" : "Sistema"
           }
         }
-      }
-    },
-    "settings.install.section" : {
-      "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "Share & install" } },
-        "es" : { "stringUnit" : { "state" : "translated", "value" : "Compartir e instalar" } }
-      }
-    },
-    "settings.install.title" : {
-      "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "Install on iPhone" } },
-        "es" : { "stringUnit" : { "state" : "translated", "value" : "Instalar en iPhone" } }
-      }
-    },
-    "settings.install.subtitle" : {
-      "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "Share this QR so others can install Chambea from GitHub" } },
-        "es" : { "stringUnit" : { "state" : "translated", "value" : "Comparte este QR para que otros instalen Chambea desde GitHub" } }
-      }
-    },
-    "settings.install.scan" : {
-      "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "Scan to open install guide" } },
-        "es" : { "stringUnit" : { "state" : "translated", "value" : "Escanea para abrir la guía de instalación" } }
-      }
-    },
-    "settings.install.how" : {
-      "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "How it works" } },
-        "es" : { "stringUnit" : { "state" : "translated", "value" : "Cómo funciona" } }
-      }
-    },
-    "settings.install.step1" : {
-      "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "Scan the QR with another iPhone or share the link" } },
-        "es" : { "stringUnit" : { "state" : "translated", "value" : "Escanea el QR con otro iPhone o comparte el enlace" } }
-      }
-    },
-    "settings.install.step2" : {
-      "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "Open the guide and download the project on a Mac" } },
-        "es" : { "stringUnit" : { "state" : "translated", "value" : "Abre la guía y descarga el proyecto en un Mac" } }
-      }
-    },
-    "settings.install.step3" : {
-      "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "Run the app from Xcode on the connected iPhone" } },
-        "es" : { "stringUnit" : { "state" : "translated", "value" : "Ejecuta la app desde Xcode en el iPhone conectado" } }
-      }
-    },
-    "settings.install.note" : {
-      "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "iOS does not allow direct install from QR like Android. TestFlight support is coming soon." } },
-        "es" : { "stringUnit" : { "state" : "translated", "value" : "iOS no permite instalar directo desde QR como Android. TestFlight llegará pronto." } }
-      }
-    },
-    "settings.install.openGuide" : {
-      "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "Open install guide" } },
-        "es" : { "stringUnit" : { "state" : "translated", "value" : "Abrir guía de instalación" } }
-      }
-    },
-    "settings.install.share" : {
-      "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "Share install link" } },
-        "es" : { "stringUnit" : { "state" : "translated", "value" : "Compartir enlace de instalación" } }
-      }
-    },
-    "settings.install.repository" : {
-      "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "View on GitHub" } },
-        "es" : { "stringUnit" : { "state" : "translated", "value" : "Ver en GitHub" } }
       }
     },
     "settings.title" : {
