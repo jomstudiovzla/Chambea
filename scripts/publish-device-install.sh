@@ -27,13 +27,21 @@ if [[ -z "$IPA_SRC" ]]; then
 fi
 
 cp "$IPA_SRC" "$ROOT/build/$IPA_NAME"
+
+MANIFEST="$ROOT/docs/manifest.plist"
+sed -e "s/VERSION/$VERSION/g" "$ROOT/scripts/manifest.plist.template" > "$MANIFEST"
+
 echo "✅ IPA generado: $ROOT/build/$IPA_NAME"
+echo "✅ Manifiesto OTA: $MANIFEST"
 echo ""
 echo "📤 Sube el IPA a GitHub Releases:"
 echo "   1. Ve a https://github.com/jomstudiovzla/Chambea/releases/new"
 echo "   2. Tag: v$VERSION"
 echo "   3. Sube: build/$IPA_NAME"
 echo "   4. Publica el release"
+echo "   5. Haz commit de docs/manifest.plist y activa OTA en:"
+echo "      - AppInstallConfig.swift → otaPackagePublished = true"
+echo "      - docs/install.html (cuando vuelvas a habilitar OTA)"
 echo ""
 echo "Luego el botón 'Instalar en tu dispositivo' funcionará desde:"
 echo "   https://jomstudiovzla.github.io/Chambea/install.html"

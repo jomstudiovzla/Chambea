@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="theme-color" content="#2563EB">
   <title>Instalar Chambea</title>
@@ -14,6 +15,8 @@
       --text: #0F172A;
       --muted: #64748B;
       --card: #FFFFFF;
+      --warn-bg: #FEF3C7;
+      --warn-text: #92400E;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -22,11 +25,11 @@
       color: var(--text);
       min-height: 100vh;
       min-height: 100dvh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: max(24px, env(safe-area-inset-top)) 24px max(32px, env(safe-area-inset-bottom));
+      padding: max(24px, env(safe-area-inset-top)) 20px max(32px, env(safe-area-inset-bottom));
+    }
+    .wrap {
+      max-width: 400px;
+      margin: 0 auto;
       text-align: center;
     }
     .logo {
@@ -34,29 +37,27 @@
       height: 88px;
       border-radius: 22px;
       background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-      display: flex;
+      display: inline-flex;
       align-items: center;
       justify-content: center;
       font-size: 2.4rem;
       margin-bottom: 20px;
       box-shadow: 0 16px 40px rgba(37, 99, 235, 0.35);
     }
-    h1 {
-      font-size: 2rem;
-      font-weight: 700;
-      letter-spacing: -0.03em;
-      margin-bottom: 8px;
-    }
-    .subtitle {
-      color: var(--muted);
-      font-size: 1rem;
+    h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.03em; margin-bottom: 8px; }
+    .subtitle { color: var(--muted); font-size: 1rem; line-height: 1.5; margin-bottom: 24px; }
+    .notice {
+      background: var(--warn-bg);
+      color: var(--warn-text);
+      border-radius: 12px;
+      padding: 14px 16px;
+      font-size: 0.88rem;
       line-height: 1.5;
-      max-width: 320px;
-      margin-bottom: 32px;
+      text-align: left;
+      margin-bottom: 24px;
     }
     #installBtn {
       width: 100%;
-      max-width: 320px;
       appearance: none;
       border: none;
       background: linear-gradient(135deg, var(--primary), var(--primary-dark));
@@ -67,131 +68,64 @@
       border-radius: 16px;
       cursor: pointer;
       box-shadow: 0 12px 32px rgba(37, 99, 235, 0.4);
-      transition: transform 0.15s ease, opacity 0.15s ease;
       -webkit-tap-highlight-color: transparent;
-      text-decoration: none;
-      display: inline-block;
     }
     #installBtn:active { transform: scale(0.98); opacity: 0.92; }
-    #installBtn:disabled { opacity: 0.6; cursor: wait; }
-    #status {
-      margin-top: 20px;
-      font-size: 0.9rem;
-      color: var(--muted);
-      max-width: 340px;
-      min-height: 1.4em;
-      line-height: 1.5;
-    }
+    #status { margin-top: 16px; font-size: 0.9rem; color: var(--muted); line-height: 1.5; }
     #steps {
-      display: none;
       margin-top: 28px;
-      max-width: 340px;
       text-align: left;
       background: var(--card);
       border-radius: 16px;
       padding: 20px;
       box-shadow: 0 4px 20px rgba(15, 23, 42, 0.08);
     }
-    #steps.visible { display: block; }
-    #steps h2 {
-      font-size: 1rem;
-      margin-bottom: 12px;
-      text-align: center;
-    }
-    #steps ol {
-      padding-left: 20px;
-      color: var(--muted);
-      font-size: 0.9rem;
-      line-height: 1.6;
-    }
-    #steps li { margin-bottom: 8px; }
-    #steps a { color: var(--primary); }
-    .hidden-help {
-      margin-top: 32px;
-      font-size: 0.8rem;
-      color: #94A3B8;
-    }
-    .hidden-help a { color: var(--primary); text-decoration: none; }
+    #steps h2 { font-size: 1rem; margin-bottom: 12px; text-align: center; }
+    #steps ol { padding-left: 20px; color: var(--muted); font-size: 0.9rem; line-height: 1.65; }
+    #steps li { margin-bottom: 10px; }
+    #steps a, .help a { color: var(--primary); }
+    #steps code { font-size: 0.85em; background: #F1F5F9; padding: 2px 6px; border-radius: 4px; }
+    .help { margin-top: 28px; font-size: 0.82rem; color: #94A3B8; }
   </style>
 </head>
 <body>
-  <div class="logo">💼</div>
-  <h1>Chambea</h1>
-  <p class="subtitle">Empleo remoto para hispanohablantes</p>
+  <div class="wrap">
+    <div class="logo">💼</div>
+    <h1>Chambea</h1>
+    <p class="subtitle">Empleo remoto para hispanohablantes</p>
 
-  <button id="installBtn" type="button" disabled>Comprobando…</button>
-  <p id="status"></p>
+    <div class="notice">
+      <strong>¿Viste «Unable to Install»?</strong><br>
+      Eso pasa porque la instalación con un toque (OTA) aún no está activa: falta el paquete firmado de Apple.
+      <strong>No vuelvas a intentar el botón antiguo.</strong> Usa Xcode en tu Mac (pasos abajo).
+    </div>
 
-  <div id="steps">
-    <h2>Instalar en tu iPhone (Telefono)</h2>
-    <ol>
-      <li>En tu <strong>Mac</strong>, descarga el proyecto:<br>
-        <a href="https://github.com/jomstudiovzla/Chambea/archive/refs/heads/main.zip">Descargar ZIP</a></li>
-      <li>Abre <code>Chambea.xcodeproj</code> en Xcode.</li>
-      <li>En <strong>Signing &amp; Capabilities</strong>, elige tu Apple ID como Team.</li>
-      <li>Conecta tu iPhone <strong>Telefono</strong> por USB y toca <strong>Confiar</strong>.</li>
-      <li>Selecciona tu iPhone arriba y pulsa <strong>Run ▶</strong>.</li>
-    </ol>
+    <button id="installBtn" type="button">Ver pasos para instalar</button>
+    <p id="status">Necesitas un Mac con Xcode y tu iPhone conectado por cable.</p>
+
+    <div id="steps">
+      <h2>Instalar en tu iPhone (Telefono)</h2>
+      <ol>
+        <li>En tu <strong>Mac</strong>, descarga el proyecto:<br>
+          <a href="https://github.com/jomstudiovzla/Chambea/archive/refs/heads/main.zip">Descargar ZIP</a></li>
+        <li>Abre <code>Chambea.xcodeproj</code> en Xcode.</li>
+        <li><strong>Signing &amp; Capabilities</strong> → marca <em>Automatically manage signing</em> → elige tu Apple ID.</li>
+        <li>Conecta <strong>Telefono</strong> por USB → en el iPhone toca <strong>Confiar</strong>.</li>
+        <li>Arriba en Xcode elige tu iPhone (no simulador) y pulsa <strong>Run ▶</strong>.</li>
+        <li>Si pide confiar: <em>Ajustes → General → VPN y gestión de dispositivos → Confiar</em>.</li>
+      </ol>
+    </div>
+
+    <p class="help">
+      <a href="https://github.com/jomstudiovzla/Chambea/blob/main/INSTALAR-IPHONE.md">Guía completa</a>
+      · v2 (sin OTA)
+    </p>
   </div>
 
-  <p class="hidden-help">
-    <a href="https://github.com/jomstudiovzla/Chambea/blob/main/INSTALAR-IPHONE.md">Guía completa</a>
-  </p>
-
   <script>
-    const MANIFEST = 'https://jomstudiovzla.github.io/Chambea/manifest.plist';
-    const TESTFLIGHT = '';
-    const OTA_READY = false;
-    const btn = document.getElementById('installBtn');
-    const status = document.getElementById('status');
-    const steps = document.getElementById('steps');
-
-    function init() {
-      const eniPhone = /iPhone|iPad|iPod/i.test(navigator.userAgent);
-
-      if (TESTFLIGHT) {
-        btn.textContent = 'Instalar en tu dispositivo';
-        btn.disabled = false;
-        status.textContent = 'Toca el botón para abrir TestFlight.';
-        btn.onclick = function () { window.location.href = TESTFLIGHT; };
-        return;
-      }
-
-      const otaListo = OTA_READY;
-
-      if (otaListo) {
-        btn.textContent = 'Instalar en tu dispositivo';
-        btn.disabled = false;
-        status.textContent = eniPhone
-          ? 'Toca el botón. Cuando iOS pregunte, toca Instalar.'
-          : 'Abre esta página en tu iPhone para instalar.';
-        btn.onclick = function () {
-          btn.disabled = true;
-          status.textContent = 'Preparando instalación…';
-          const encoded = encodeURIComponent(MANIFEST);
-          window.location.href = 'itms-services://?action=download-manifest&url=' + encoded;
-          setTimeout(function () {
-            btn.disabled = false;
-            status.textContent = 'Si aparece un diálogo, toca Instalar.';
-          }, 800);
-        };
-        return;
-      }
-
-      btn.textContent = 'Ver cómo instalar';
-      btn.disabled = false;
-      steps.classList.add('visible');
-      if (eniPhone) {
-        status.textContent = 'La instalación con un toque aún no está activa. Usa tu Mac con Xcode (pasos abajo).';
-      } else {
-        status.textContent = 'Sigue los pasos para instalar Chambea en tu iPhone Telefono.';
-      }
-      btn.onclick = function () {
-        steps.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      };
-    }
-
-    init();
+    document.getElementById('installBtn').onclick = function () {
+      document.getElementById('steps').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    };
   </script>
 </body>
 </html>
