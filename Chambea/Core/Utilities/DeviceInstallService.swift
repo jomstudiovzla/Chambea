@@ -13,8 +13,10 @@ enum DeviceInstallService {
             UIApplication.shared.open(direct)
             return .openedDirectInstall
         }
+        if AppInstallConfig.isDirectInstallConfigured {
+            return .unavailable
+        }
         UIApplication.shared.open(AppInstallConfig.installPageURL)
         return .openedInstallPage
-        return .unavailable
     }
 }

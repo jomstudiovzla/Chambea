@@ -62,10 +62,13 @@ struct InstallOnDeviceButton: View {
     private func performInstall() {
         isInstalling = true
         let result = DeviceInstallService.installOnDevice()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
             isInstalling = false
-            if result == .unavailable {
+            switch result {
+            case .unavailable:
                 showUnavailable = true
+            case .openedDirectInstall, .openedInstallPage:
+                break
             }
         }
     }

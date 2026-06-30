@@ -4290,8 +4290,8 @@
     },
     "settings.install.oneTap.hint" : {
       "localizations" : {
-        "en" : { "stringUnit" : { "state" : "translated", "value" : "Tap Install when iOS asks for confirmation." } },
-        "es" : { "stringUnit" : { "state" : "translated", "value" : "Toca Instalar cuando iOS pida confirmación." } }
+        "en" : { "stringUnit" : { "state" : "translated", "value" : "Opens the install guide. Use Xcode on Mac to install on your iPhone." } },
+        "es" : { "stringUnit" : { "state" : "translated", "value" : "Abre la guía de instalación. Usa Xcode en Mac para instalar en tu iPhone." } }
       }
     },
     "settings.install.unavailable.title" : {
