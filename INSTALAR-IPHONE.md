@@ -36,6 +36,7 @@ El archivo quedará en: `dist/Chambea-Instalar-iPhone.zip`
 | Documento | Contenido |
 |-----------|-----------|
 | `LEEME-PRIMERO.txt` | Inicio rápido (6 pasos) |
+| `docs/MANUAL-RELEASE-IOS-DEVOPS.md` | Manual DevOps: Signing, .ipa, instalación local |
 | `docs/GUIA-INSTALACION-IPHONE-COMPLETA.md` | Guía detallada con solución de problemas |
 | `INSTALAR-IPHONE.md` | Este archivo |
 
