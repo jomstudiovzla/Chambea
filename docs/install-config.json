@@ -1,0 +1,7 @@
+{
+  "version": "1.0.0",
+  "otaReady": false,
+  "testFlightURL": null,
+  "manifestURL": "https://jomstudiovzla.github.io/Chambea/manifest.plist",
+  "ipaURL": "https://github.com/jomstudiovzla/Chambea/releases/download/v1.0.0/Chambea.ipa"
+}
